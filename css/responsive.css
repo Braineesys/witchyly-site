@@ -1,0 +1,397 @@
+/* ==========================================================================
+   WitchyLy — Responsive & RTL Stylesheet
+   Breakpoints: 1280px, 1024px, 768px, 414px, 390px, 375px, 320px
+   RTL Direction Support for Arabic (dir="rtl")
+   ========================================================================== */
+
+/* ==========================================================================
+   Mobile Navigation Drawer
+   ========================================================================== */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 4, 18, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1090;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.mobile-nav-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: var(--bg-surface);
+  border-left: 2px solid var(--border-subtle);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.8);
+  z-index: 1100;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: right var(--transition-bounce);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-nav-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(49, 21, 82, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-white);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.mobile-menu-list .nav-link {
+  font-size: 1.15rem;
+  display: block;
+}
+
+.mobile-lang-box {
+  margin-bottom: 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-lang-title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.mobile-lang-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobile-drawer-cta {
+  margin-top: auto;
+}
+
+.mobile-drawer-cta .store-button {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
+
+/* 1024px — Laptops & Tablets Landscape */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-pills {
+    justify-content: center;
+  }
+
+  .gameplay-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .room-showcase-card {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .grimoire-inspect-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .showcase-potion-meta {
+    align-items: center;
+  }
+
+  .grimoire-potions-shelf {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* 768px — Portrait Tablets & Mobile Devices */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .nav-menu,
+  .nav-actions .btn-nav-download,
+  .nav-actions .lang-dropdown {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cta-headline {
+    font-size: 2.3rem;
+  }
+
+  .features-grid,
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grimoire-potions-shelf {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .progression-roadmap::before {
+    left: 20px;
+  }
+
+  .milestone-item {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .milestone-node {
+    width: 44px;
+    height: 44px;
+    font-size: 0.95rem;
+  }
+
+  .leaderboard-table-header,
+  .leaderboard-row {
+    grid-template-columns: 60px 1fr 100px;
+  }
+
+  .leaderboard-table-header .grimoire-col-head,
+  .leaderboard-row .grimoire-cell {
+    display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .floating-badge {
+    display: none; /* remove clutter on smaller screens */
+  }
+}
+
+/* 414px & 390px — Modern Smartphones */
+@media (max-width: 414px) {
+  .hero-headline {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-cta-group,
+  .cta-buttons-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .store-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card:last-child {
+    grid-column: auto;
+  }
+
+  .grimoire-book-wrapper {
+    padding: 24px 16px;
+  }
+
+  .room-showcase-card {
+    padding: 20px 16px;
+  }
+}
+
+/* 320px — Very Small Phones */
+@media (max-width: 320px) {
+  .hero-headline {
+    font-size: 1.8rem;
+  }
+
+  .nav-logo-img {
+    height: 38px;
+  }
+
+  .grimoire-potions-shelf {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   RTL Direction Layout (Arabic Language: dir="rtl")
+   ========================================================================== */
+html[dir="rtl"] body,
+body.rtl-mode {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-content,
+body.rtl-mode .hero-content {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .gameplay-step-card,
+body.rtl-mode .gameplay-step-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .room-details-content,
+body.rtl-mode .room-details-content {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .progression-roadmap::before,
+body.rtl-mode .progression-roadmap::before {
+  left: auto;
+  right: 28px;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .progression-roadmap::before,
+  body.rtl-mode .progression-roadmap::before {
+    left: auto;
+    right: 20px;
+  }
+}
+
+html[dir="rtl"] .milestone-item:hover,
+body.rtl-mode .milestone-item:hover {
+  transform: translateX(-8px);
+}
+
+html[dir="rtl"] .mobile-nav-drawer,
+body.rtl-mode .mobile-nav-drawer {
+  right: auto;
+  left: -320px;
+  border-left: none;
+  border-right: 2px solid var(--border-subtle);
+  transition: left var(--transition-bounce);
+}
+
+html[dir="rtl"] .mobile-nav-drawer.open,
+body.rtl-mode .mobile-nav-drawer.open {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .lang-dropdown-menu,
+body.rtl-mode .lang-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .lang-option,
+body.rtl-mode .lang-option {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-brand-col,
+body.rtl-mode .footer-brand-col {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .showcase-potion-meta,
+body.rtl-mode .showcase-potion-meta {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .room-nav-arrow.prev-arrow,
+body.rtl-mode .room-nav-arrow.prev-arrow {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .room-nav-arrow.next-arrow,
+body.rtl-mode .room-nav-arrow.next-arrow {
+  transform: scaleX(-1);
+}
