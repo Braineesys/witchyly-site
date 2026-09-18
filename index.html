@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WitchyLy — Brew Magic, Catch Ingredients &amp; Master the Grimoire</title>
+  <title>WitchyLy</title>
   <meta name="description"
     content="Enter the magical world of WitchyLy. Catch falling ingredients, brew potions, explore 8 magical rooms and master 80 levels on iOS and Android.">
   <meta name="keywords"
@@ -16,7 +16,7 @@
   <!-- Open Graph / Facebook / Discord / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://witchyly.com/">
-  <meta property="og:title" content="WitchyLy — Brew Magic, Catch Ingredients &amp; Master the Grimoire">
+  <meta property="og:title" content="WitchyLy">
   <meta property="og:description"
     content="Enter the magical world of WitchyLy. Catch falling ingredients, brew potions, explore 8 magical rooms and master 80 levels on iOS and Android.">
   <meta property="og:image" content="https://witchyly.com/assets/screenshots/app_icon_hero.jpg">
@@ -25,7 +25,7 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://witchyly.com/">
-  <meta name="twitter:title" content="WitchyLy — Brew Magic, Catch Ingredients &amp; Master the Grimoire">
+  <meta name="twitter:title" content="WitchyLy">
   <meta name="twitter:description"
     content="Enter the magical world of WitchyLy. Catch falling ingredients, brew potions, explore 8 magical rooms and master 80 levels on iOS and Android.">
   <meta name="twitter:image" content="https://witchyly.com/assets/screenshots/app_icon_hero.jpg">
@@ -326,9 +326,44 @@
         </div>
 
         <div id="gameplay-interactive-stage" aria-label="Interactive cauldron preview stage">
+          <!-- Stage Corner HUD Tray (3 Slots: Potion / XP / Curse) -->
+          <div class="stage-cauldron-tray" id="stage-cauldron-tray" aria-label="Cauldron collected ingredients">
+            <div class="tray-label">
+              <span class="tray-sparkle">✨</span>
+              <span class="tray-text" data-i18n="gameplay.cauldron_queue">Brewing Cauldron (3 Slots)</span>
+            </div>
+            <div class="tray-slots" id="tray-slots">
+              <div class="tray-slot empty" data-slot-index="0" title="Slot 1">
+                <span class="slot-num">1</span>
+              </div>
+              <div class="tray-slot empty" data-slot-index="1" title="Slot 2">
+                <span class="slot-num">2</span>
+              </div>
+              <div class="tray-slot empty" data-slot-index="2" title="Slot 3">
+                <span class="slot-num">3</span>
+              </div>
+            </div>
+            <div class="tray-status-text" id="tray-status-text" data-i18n="gameplay.cauldron_status_empty">
+              Catch 3 ingredients to brew!
+            </div>
+          </div>
+
+          <!-- Outcome Announcement Banner (Potion / XP / Curse) -->
+          <div class="cauldron-outcome-banner" id="cauldron-outcome-banner" aria-live="polite"></div>
+
           <!-- The cauldron & Ly element -->
           <div id="interactive-cauldron">
-            <img src="assets/characters/ly_cauldron_clean.png" alt="Ly with Cauldron">
+            <!-- Overhead 3-slot floating tray -->
+            <div class="cauldron-floating-queue" id="cauldron-floating-queue" aria-hidden="true">
+              <div class="floating-queue-slots" id="floating-queue-slots">
+                <div class="floating-slot empty" data-slot="0"></div>
+                <div class="floating-slot empty" data-slot="1"></div>
+                <div class="floating-slot empty" data-slot="2"></div>
+              </div>
+            </div>
+            <div class="cauldron-sprite">
+              <img src="assets/characters/ly_cauldron_clean.png" alt="Ly with Cauldron">
+            </div>
           </div>
         </div>
 
@@ -492,18 +527,6 @@
             <img src="assets/grimoire/grimoire_icon.png" alt="Smiling Grimoire Book" class="grimoire-mascot-img">
             <h3 class="grimoire-header-title">Lilly's Grimoire</h3>
           </div>
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <div
-              style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); padding: 4px 12px; border-radius: 9999px;">
-              <img src="assets/icons/coin_witch_hat.png" alt="Coins" width="22" height="22">
-              <span style="color: var(--accent-gold); font-weight: 700; font-size: 0.9rem;">11,313</span>
-            </div>
-            <div
-              style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); padding: 4px 12px; border-radius: 9999px;">
-              <img src="assets/icons/crystal_purple_shard.png" alt="Crystals" width="18" height="22">
-              <span style="color: var(--accent-purple-light); font-weight: 700; font-size: 0.9rem;">575</span>
-            </div>
-          </div>
         </div>
 
         <!-- Selected Potion Showcase Inspector -->
@@ -512,7 +535,6 @@
             <div class="showcase-bottle-frame">
               <img src="assets/potions/potion_dark_magic_hires.jpg" alt="Dark Magic Potion" id="showcase-potion-img">
             </div>
-            <div class="showcase-potion-qty" id="showcase-potion-count">x5</div>
           </div>
 
           <div class="showcase-potion-meta">
@@ -531,42 +553,36 @@
           <div class="grimoire-potion-card active" tabindex="0" role="button" aria-label="Inspect Dark Magic Potion">
             <img src="assets/potions/potion_dark_magic_hires.jpg" alt="Dark Magic" class="potion-card-thumb">
             <div class="potion-card-label" data-i18n="grimoire.p1_name">Dark Magic</div>
-            <div class="potion-card-qty">x5</div>
           </div>
 
           <!-- Card 2: Creature -->
           <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Creature Potion">
             <img src="assets/potions/potion_creature_hires.jpg" alt="Creature Potion" class="potion-card-thumb">
             <div class="potion-card-label" data-i18n="grimoire.p2_name">Creature Potion</div>
-            <div class="potion-card-qty">x8</div>
           </div>
 
           <!-- Card 3: Arcane -->
           <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Arcane Potion">
             <img src="assets/potions/potion_arcane_hires.jpg" alt="Arcane Potion" class="potion-card-thumb">
             <div class="potion-card-label" data-i18n="grimoire.p3_name">Arcane Potion</div>
-            <div class="potion-card-qty">x1</div>
           </div>
 
           <!-- Card 4: Nature -->
           <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Nature Potion">
             <img src="assets/potions/potion_nature_hires.jpg" alt="Nature Potion" class="potion-card-thumb">
             <div class="potion-card-label" data-i18n="grimoire.p4_name">Nature Potion</div>
-            <div class="potion-card-qty">x2</div>
           </div>
 
           <!-- Card 5: Ethereal -->
           <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Ethereal Potion">
             <img src="assets/potions/potion_ethereal_hires.jpg" alt="Ethereal Potion" class="potion-card-thumb">
             <div class="potion-card-label" data-i18n="grimoire.p5_name">Ethereal Potion</div>
-            <div class="potion-card-qty">x4</div>
           </div>
 
           <!-- Card 6: Sweets -->
           <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Sweets Potion">
             <img src="assets/potions/potion_sweets_hires.jpg" alt="Sweets Potion" class="potion-card-thumb">
             <div class="potion-card-label" data-i18n="grimoire.p6_name">Sweets Potion</div>
-            <div class="potion-card-qty">x6</div>
           </div>
         </div>
       </div>
@@ -582,7 +598,7 @@
         <div class="section-badge" data-i18n="ingredients.tag">Alchemical Families</div>
         <h2 class="section-title" data-i18n="ingredients.headline">6 Families to Combine</h2>
         <p class="section-subtitle" data-i18n="ingredients.subtitle">
-          Learn to pair the right families to brew successful potions and climb the leaderboard.
+          Catch 3 of the same family for a potion, 2 of the same for XP, or 3 different families and it's a Curse!
         </p>
       </div>
 
@@ -591,67 +607,71 @@
         <div class="ingredient-family-card reveal-on-scroll delay-1">
           <div class="family-badge-header">
             <div class="family-icon">
-              <img src="assets/ingredients/sprites/green_frog.png" alt="Creature" class="family-header-sprite">
+              <img src="assets/ingredients/sprites/green_frog.png" alt="Creature Family" class="family-header-sprite">
             </div>
             <span class="family-badge-tag">Family 01</span>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam1_title">Creature</h3>
+          <h3 class="family-title" data-i18n="ingredients.fam1_title">Creature Family</h3>
+          <div class="family-potion-badge" data-i18n="ingredients.fam1_potion">Brews: Creature Potion</div>
           <p class="family-desc" data-i18n="ingredients.fam1_desc">
-            Fireflies, spiders, familiars, and cute spirit buddies.
+            Living creatures, Unpredictable movement, Chaos and agility
           </p>
           <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/green_frog.png" alt="Green Frog" class="family-sprite-thumb"
-              title="Green Frog">
-            <img src="assets/ingredients/sprites/firefly.png" alt="Firefly" class="family-sprite-thumb" title="Firefly">
+            <img src="assets/ingredients/sprites/green_frog.png" alt="Frog" class="family-sprite-thumb" title="Frog">
             <img src="assets/ingredients/sprites/spider.png" alt="Spider" class="family-sprite-thumb" title="Spider">
             <img src="assets/ingredients/sprites/scarab_beetle.png" alt="Scarab" class="family-sprite-thumb"
-              title="Scarab Beetle">
+              title="Scarab">
+            <img src="assets/ingredients/sprites/scorpion.png" alt="Scorpion" class="family-sprite-thumb"
+              title="Scorpion">
           </div>
         </div>
 
-        <!-- Family 2: Nature -->
+        <!-- Family 2: Arcane -->
         <div class="ingredient-family-card reveal-on-scroll delay-2">
           <div class="family-badge-header">
             <div class="family-icon">
-              <img src="assets/ingredients/sprites/black_rose.png" alt="Nature" class="family-header-sprite">
+              <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Arcane Family"
+                class="family-header-sprite">
             </div>
             <span class="family-badge-tag">Family 02</span>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam2_title">Nature</h3>
+          <h3 class="family-title" data-i18n="ingredients.fam2_title">Arcane Family</h3>
+          <div class="family-potion-badge" data-i18n="ingredients.fam2_potion">Brews: Arcane Potion</div>
           <p class="family-desc" data-i18n="ingredients.fam2_desc">
-            Dark roses, sacred leaves, enchanted seeds, and wild roots.
+            Magical artifacts, Precious objects, Arcane energy
           </p>
           <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/black_rose.png" alt="Black Rose" class="family-sprite-thumb"
-              title="Black Rose">
-            <img src="assets/ingredients/sprites/mushroom.png" alt="Mushroom" class="family-sprite-thumb"
-              title="Mushroom">
-            <img src="assets/ingredients/sprites/thorny_nut.png" alt="Thorny Nut" class="family-sprite-thumb"
-              title="Thorny Nut">
+            <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Purple Crystal" class="family-sprite-thumb"
+              title="Purple Crystal">
+            <img src="assets/ingredients/sprites/ruby_gem.png" alt="Ruby" class="family-sprite-thumb" title="Ruby">
+            <img src="assets/ingredients/sprites/rune_g.png" alt="Rune" class="family-sprite-thumb" title="Rune">
+            <img src="assets/ingredients/sprites/crystal_ball.png" alt="Magic Orb" class="family-sprite-thumb"
+              title="Magic Orb">
           </div>
         </div>
 
-        <!-- Family 3: Arcane -->
+        <!-- Family 3: Nature -->
         <div class="ingredient-family-card reveal-on-scroll delay-3">
           <div class="family-badge-header">
             <div class="family-icon">
-              <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Arcane" class="family-header-sprite">
+              <img src="assets/ingredients/sprites/mushroom.png" alt="Nature Family" class="family-header-sprite">
             </div>
             <span class="family-badge-tag">Family 03</span>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam3_title">Arcane</h3>
+          <h3 class="family-title" data-i18n="ingredients.fam3_title">Nature Family</h3>
+          <div class="family-potion-badge" data-i18n="ingredients.fam3_potion">Brews: Nature Potion</div>
           <p class="family-desc" data-i18n="ingredients.fam3_desc">
-            Glowing crystal orbs, purple spellbooks, and mystic gems.
+            Organic ingredients, Living world, Natural magic
           </p>
           <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Diamond Crystal" class="family-sprite-thumb"
-              title="Diamond Crystal">
-            <img src="assets/ingredients/sprites/crystal_ball.png" alt="Crystal Ball" class="family-sprite-thumb"
-              title="Crystal Ball">
-            <img src="assets/ingredients/sprites/rune_g.png" alt="Ancient Rune" class="family-sprite-thumb"
-              title="Ancient Rune">
-            <img src="assets/ingredients/sprites/ruby_gem.png" alt="Ruby Gem" class="family-sprite-thumb"
-              title="Ruby Gem">
+            <img src="assets/ingredients/sprites/mushroom.png" alt="Mushroom" class="family-sprite-thumb"
+              title="Mushroom">
+            <img src="assets/ingredients/sprites/dragon_egg.png" alt="Dragon Egg" class="family-sprite-thumb"
+              title="Dragon Egg">
+            <img src="assets/ingredients/sprites/thorny_nut.png" alt="Thorny Plant" class="family-sprite-thumb"
+              title="Thorny Plant">
+            <img src="assets/ingredients/sprites/rainbow_shell.png" alt="Snail Shell" class="family-sprite-thumb"
+              title="Snail Shell">
           </div>
         </div>
 
@@ -659,20 +679,22 @@
         <div class="ingredient-family-card reveal-on-scroll delay-1">
           <div class="family-badge-header">
             <div class="family-icon">
-              <img src="assets/ingredients/sprites/skull.png" alt="Dark Magic" class="family-header-sprite">
+              <img src="assets/ingredients/sprites/skull.png" alt="Dark Magic Family" class="family-header-sprite">
             </div>
             <span class="family-badge-tag">Family 04</span>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam4_title">Dark Magic</h3>
+          <h3 class="family-title" data-i18n="ingredients.fam4_title">Dark Magic Family</h3>
+          <div class="family-potion-badge" data-i18n="ingredients.fam4_potion">Brews: Dark Potion</div>
           <p class="family-desc" data-i18n="ingredients.fam4_desc">
-            Skull totems, purple spirit flame, and twilight essence.
+            Curses, Forbidden magic, Dark alchemy
           </p>
           <div class="family-sprites-row">
             <img src="assets/ingredients/sprites/skull.png" alt="Skull" class="family-sprite-thumb" title="Skull">
-            <img src="assets/ingredients/sprites/scorpion.png" alt="Scorpion" class="family-sprite-thumb"
-              title="Scorpion">
-            <img src="assets/ingredients/sprites/eyeball.png" alt="Mystic Eye" class="family-sprite-thumb"
-              title="Mystic Eye">
+            <img src="assets/ingredients/sprites/eyeball.png" alt="Eyeball" class="family-sprite-thumb" title="Eyeball">
+            <img src="assets/ingredients/sprites/black_rose.png" alt="Black Rose" class="family-sprite-thumb"
+              title="Black Rose">
+            <img src="assets/ingredients/sprites/feather.png" alt="Raven Feather" class="family-sprite-thumb"
+              title="Raven Feather">
           </div>
         </div>
 
@@ -680,23 +702,23 @@
         <div class="ingredient-family-card reveal-on-scroll delay-2">
           <div class="family-badge-header">
             <div class="family-icon">
-              <img src="assets/ingredients/sprites/feather.png" alt="Ethereal" class="family-header-sprite">
+              <img src="assets/ingredients/sprites/firefly.png" alt="Ethereal Family" class="family-header-sprite">
             </div>
             <span class="family-badge-tag">Family 05</span>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam5_title">Ethereal</h3>
+          <h3 class="family-title" data-i18n="ingredients.fam5_title">Ethereal Family</h3>
+          <div class="family-potion-badge" data-i18n="ingredients.fam5_potion">Brews: Ethereal Potion</div>
           <p class="family-desc" data-i18n="ingredients.fam5_desc">
-            Celestial feathers, moon tears, and floating starlight.
+            Spirits, Magical energy, Floating elements
           </p>
           <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/feather.png" alt="Feather" class="family-sprite-thumb"
-              title="Celestial Feather">
-            <img src="assets/ingredients/sprites/soul_flame.png" alt="Soul Flame" class="family-sprite-thumb"
-              title="Soul Flame">
-            <img src="assets/ingredients/sprites/rainbow_shell.png" alt="Rainbow Shell" class="family-sprite-thumb"
-              title="Rainbow Shell">
-            <img src="assets/ingredients/sprites/fire_flame.png" alt="Fire Flame" class="family-sprite-thumb"
-              title="Fire Flame">
+            <img src="assets/ingredients/sprites/firefly.png" alt="Firefly" class="family-sprite-thumb" title="Firefly">
+            <img src="assets/ingredients/sprites/spell_scroll.png" alt="Scroll" class="family-sprite-thumb"
+              title="Scroll">
+            <img src="assets/ingredients/sprites/soul_flame.png" alt="Blue Flame" class="family-sprite-thumb"
+              title="Blue Flame">
+            <img src="assets/ingredients/sprites/fire_flame.png" alt="Orange Flame" class="family-sprite-thumb"
+              title="Orange Flame">
           </div>
         </div>
 
@@ -704,21 +726,20 @@
         <div class="ingredient-family-card reveal-on-scroll delay-3">
           <div class="family-badge-header">
             <div class="family-icon">
-              <img src="assets/ingredients/sprites/candy.png" alt="Sweets" class="family-header-sprite">
+              <img src="assets/ingredients/sprites/candy.png" alt="Sweets Family" class="family-header-sprite">
             </div>
             <span class="family-badge-tag">Family 06</span>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam6_title">Sweets</h3>
+          <h3 class="family-title" data-i18n="ingredients.fam6_title">Sweets Family</h3>
+          <div class="family-potion-badge" data-i18n="ingredients.fam6_potion">Brews: Sweet Potion</div>
           <p class="family-desc" data-i18n="ingredients.fam6_desc">
-            Star sugar, candied drops, and enchanted berry nectar.
+            Treats, Mischievous magic, Weird witch snacks
           </p>
           <div class="family-sprites-row">
             <img src="assets/ingredients/sprites/candy.png" alt="Candy" class="family-sprite-thumb" title="Candy">
             <img src="assets/ingredients/sprites/cupcake.png" alt="Cupcake" class="family-sprite-thumb" title="Cupcake">
-            <img src="assets/ingredients/sprites/slime_cookie.png" alt="Slime Cookie" class="family-sprite-thumb"
-              title="Slime Cookie">
-            <img src="assets/ingredients/sprites/dragon_egg.png" alt="Dragon Egg" class="family-sprite-thumb"
-              title="Dragon Egg">
+            <img src="assets/ingredients/sprites/slime_cookie.png" alt="Moldy Cookie" class="family-sprite-thumb"
+              title="Moldy Cookie">
           </div>
         </div>
       </div>

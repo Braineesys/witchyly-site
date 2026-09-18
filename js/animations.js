@@ -133,33 +133,33 @@
 
     if (prefersReducedMotion) return;
 
-    // Official 24 ingredient sprites extracted from provided game sheets
-    const ingredientSprites = [
-      'assets/ingredients/sprites/dragon_egg.png',
-      'assets/ingredients/sprites/firefly.png',
-      'assets/ingredients/sprites/fire_flame.png',
-      'assets/ingredients/sprites/rune_g.png',
-      'assets/ingredients/sprites/thorny_nut.png',
-      'assets/ingredients/sprites/scorpion.png',
-      'assets/ingredients/sprites/black_rose.png',
-      'assets/ingredients/sprites/slime_cookie.png',
-      'assets/ingredients/sprites/crystal_diamond.png',
-      'assets/ingredients/sprites/green_frog.png',
-      'assets/ingredients/sprites/mushroom.png',
-      'assets/ingredients/sprites/soul_flame.png',
-      'assets/ingredients/sprites/feather.png',
-      'assets/ingredients/sprites/spider.png',
-      'assets/ingredients/sprites/candy.png',
-      'assets/ingredients/sprites/potion_bottle.png',
-      'assets/ingredients/sprites/ruby_gem.png',
-      'assets/ingredients/sprites/spell_scroll.png',
-      'assets/ingredients/sprites/cupcake.png',
-      'assets/ingredients/sprites/scarab_beetle.png',
-      'assets/ingredients/sprites/skull.png',
-      'assets/ingredients/sprites/crystal_ball.png',
-      'assets/ingredients/sprites/rainbow_shell.png',
-      'assets/ingredients/sprites/eyeball.png'
-    ];
+    // Official 23 ingredient sprites, each mapped to one of the 6 potion families
+    const SPRITE_FAMILY_MAP = {
+      'assets/ingredients/sprites/green_frog.png': 'creature',
+      'assets/ingredients/sprites/spider.png': 'creature',
+      'assets/ingredients/sprites/scarab_beetle.png': 'creature',
+      'assets/ingredients/sprites/scorpion.png': 'creature',
+      'assets/ingredients/sprites/crystal_diamond.png': 'arcane',
+      'assets/ingredients/sprites/ruby_gem.png': 'arcane',
+      'assets/ingredients/sprites/rune_g.png': 'arcane',
+      'assets/ingredients/sprites/crystal_ball.png': 'arcane',
+      'assets/ingredients/sprites/mushroom.png': 'nature',
+      'assets/ingredients/sprites/dragon_egg.png': 'nature',
+      'assets/ingredients/sprites/thorny_nut.png': 'nature',
+      'assets/ingredients/sprites/rainbow_shell.png': 'nature',
+      'assets/ingredients/sprites/skull.png': 'dark',
+      'assets/ingredients/sprites/eyeball.png': 'dark',
+      'assets/ingredients/sprites/black_rose.png': 'dark',
+      'assets/ingredients/sprites/feather.png': 'dark',
+      'assets/ingredients/sprites/firefly.png': 'ethereal',
+      'assets/ingredients/sprites/spell_scroll.png': 'ethereal',
+      'assets/ingredients/sprites/soul_flame.png': 'ethereal',
+      'assets/ingredients/sprites/fire_flame.png': 'ethereal',
+      'assets/ingredients/sprites/candy.png': 'sweets',
+      'assets/ingredients/sprites/cupcake.png': 'sweets',
+      'assets/ingredients/sprites/slime_cookie.png': 'sweets'
+    };
+    const ingredientSprites = Object.keys(SPRITE_FAMILY_MAP);
 
     let stageWidth = stage.clientWidth;
     let stageHeight = stage.clientHeight;
@@ -209,6 +209,7 @@
 
       fallingItems.push({
         el: itemEl,
+        sprite: sprite,
         x: startX,
         y: -40,
         startX: startX,
@@ -227,24 +228,156 @@
     });
     gameplayObserver.observe(stage);
 
-    function triggerCauldronCatchEffect() {
+    // 3-slot brewing queue: matched by family instead of plain FIFO overwrite
+    const MAX_COLLECTED = 3;
+    const collectedQueue = []; // stores { sprite, family }
+
+    const hudSlotsContainer = document.getElementById('tray-slots');
+    const floatingSlotsContainer = document.getElementById('floating-queue-slots');
+    const floatingQueueWrap = document.getElementById('cauldron-floating-queue');
+    const trayStatusText = document.getElementById('tray-status-text');
+    const outcomeBanner = document.getElementById('cauldron-outcome-banner');
+
+    function translate(key, fallback) {
+      try {
+        const lang = document.documentElement.lang || 'en';
+        const dict = (typeof translations !== 'undefined') ? (translations[lang] || translations.en) : null;
+        const value = dict ? getNestedValue(dict, key) : undefined;
+        return value !== undefined ? value : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function updateStatusText() {
+      if (!trayStatusText) return;
+      if (collectedQueue.length === 0) {
+        trayStatusText.textContent = translate('gameplay.cauldron_status_empty', 'Catch 3 ingredients to brew!');
+      } else {
+        trayStatusText.textContent = translate('gameplay.cauldron_status_progress', 'Match families for a potion!');
+      }
+    }
+
+    function updateCollectedDisplay() {
+      // 1. Stage HUD Tray
+      if (hudSlotsContainer) {
+        const hudSlots = hudSlotsContainer.querySelectorAll('.tray-slot');
+        hudSlots.forEach((slot, index) => {
+          if (index < collectedQueue.length) {
+            const { sprite } = collectedQueue[index];
+            const isNewest = index === collectedQueue.length - 1;
+            slot.className = `tray-slot filled ${isNewest ? 'just-added' : ''}`;
+            slot.innerHTML = `<img src="${sprite}" alt="Collected ingredient ${index + 1}">`;
+          } else {
+            slot.className = 'tray-slot empty';
+            slot.innerHTML = `<span class="slot-num">${index + 1}</span>`;
+          }
+        });
+      }
+
+      // 2. Overhead Cauldron Floating Queue
+      if (floatingSlotsContainer) {
+        const floatingSlots = floatingSlotsContainer.querySelectorAll('.floating-slot');
+        floatingSlots.forEach((slot, index) => {
+          if (index < collectedQueue.length) {
+            const { sprite } = collectedQueue[index];
+            const isNewest = index === collectedQueue.length - 1;
+            slot.className = `floating-slot filled ${isNewest ? 'just-added' : ''}`;
+            slot.innerHTML = `<img src="${sprite}" alt="Collected ingredient ${index + 1}">`;
+          } else {
+            slot.className = 'floating-slot empty';
+            slot.innerHTML = '';
+          }
+        });
+        if (floatingQueueWrap) {
+          floatingQueueWrap.classList.toggle('has-items', collectedQueue.length > 0);
+        }
+      }
+
+      updateStatusText();
+    }
+
+    function showOutcomeBanner(type) {
+      if (!outcomeBanner) return;
+      const config = {
+        potion: { icon: '🧪', text: translate('gameplay.outcome_potion', 'Potion Brewed!') },
+        xp: { icon: '⭐', text: translate('gameplay.outcome_xp', '+50 XP!') },
+        curse: { icon: '💀', text: translate('gameplay.outcome_curse', 'CURSE!') }
+      }[type];
+      if (!config) return;
+
+      outcomeBanner.innerHTML = `<span class="outcome-icon">${config.icon}</span><span class="outcome-text">${config.text}</span>`;
+      outcomeBanner.className = `cauldron-outcome-banner show outcome-${type}`;
+      setTimeout(() => {
+        outcomeBanner.classList.remove('show');
+      }, 1300);
+    }
+
+    function evaluateBrew() {
+      const families = collectedQueue.map(item => item.family);
+      const uniqueFamilies = new Set(families);
+
+      let outcome;
+      if (uniqueFamilies.size === 1) {
+        outcome = 'potion'; // 3 of the same family
+      } else if (uniqueFamilies.size === 2) {
+        outcome = 'xp'; // 2 of the same family + 1 different
+      } else {
+        outcome = 'curse'; // all 3 different families
+      }
+
+      showOutcomeBanner(outcome);
+
+      // Clear the cauldron after the outcome is revealed, then resume catching
+      setTimeout(() => {
+        collectedQueue.length = 0;
+        updateCollectedDisplay();
+      }, 700);
+    }
+
+    function addIngredientToQueue(sprite) {
+      const family = SPRITE_FAMILY_MAP[sprite] || null;
+      if (collectedQueue.length >= MAX_COLLECTED) {
+        collectedQueue.length = 0; // safety reset, should already be cleared post-brew
+      }
+      collectedQueue.push({ sprite, family });
+      updateCollectedDisplay();
+
+      if (collectedQueue.length === MAX_COLLECTED) {
+        evaluateBrew();
+      }
+    }
+
+    function triggerCauldronCatchEffect(sprite) {
+      // Add to the 3-slot brewing queue
+      addIngredientToQueue(sprite);
+
+      // Bounce effect on inner sprite (cauldron position is never reset)
       cauldron.classList.remove('splash-effect');
-      // Force reflow
       void cauldron.offsetWidth;
       cauldron.classList.add('splash-effect');
 
+      // Floating mini sprite popup rising out of cauldron
+      const popup = document.createElement('div');
+      popup.className = 'cauldron-catch-popup';
+      popup.innerHTML = `<img src="${sprite}" alt="Caught ingredient">`;
+      cauldron.appendChild(popup);
+      setTimeout(() => popup.remove(), 600);
+
       // Create burst sparkles
-      for (let s = 0; s < 5; s++) {
+      for (let s = 0; s < 6; s++) {
         const spark = document.createElement('span');
         spark.className = 'cauldron-spark';
-        const colors = ['#70E000', '#FFD166', '#C77DFF', '#48CAE4'];
+        const colors = ['#70E000', '#FFD166', '#C77DFF', '#48CAE4', '#FF4D8D'];
         spark.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        spark.style.setProperty('--dx', `${(Math.random() - 0.5) * 70}px`);
+        spark.style.setProperty('--dx', `${(Math.random() - 0.5) * 80}px`);
         spark.style.setProperty('--dy', `${-Math.random() * 50 - 20}px`);
         cauldron.appendChild(spark);
-        setTimeout(() => spark.remove(), 800);
+        setTimeout(() => spark.remove(), 700);
       }
     }
+
+    updateStatusText();
 
     function renderLoop(time) {
       if (isGameplayVisible) {
@@ -273,7 +406,7 @@
           // Check if caught by cauldron
           const distToCauldronX = Math.abs(item.x - cauldronX);
           if (item.y >= cauldronTop - 30 && item.y <= cauldronTop + 20 && distToCauldronX < 55) {
-            triggerCauldronCatchEffect();
+            triggerCauldronCatchEffect(item.sprite);
             item.el.remove();
             fallingItems.splice(i, 1);
             continue;

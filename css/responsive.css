@@ -395,3 +395,11 @@ html[dir="rtl"] .room-nav-arrow.next-arrow,
 body.rtl-mode .room-nav-arrow.next-arrow {
   transform: scaleX(-1);
 }
+
+html[dir="rtl"] .stage-cauldron-tray,
+body.rtl-mode .stage-cauldron-tray {
+  right: auto;
+  left: 18px;
+  align-items: flex-start;
+}
+

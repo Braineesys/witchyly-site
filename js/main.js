@@ -376,7 +376,6 @@
     const showcaseTitle = document.getElementById('showcase-potion-title');
     const showcaseType = document.getElementById('showcase-potion-type');
     const showcaseDesc = document.getElementById('showcase-potion-desc');
-    const showcaseCount = document.getElementById('showcase-potion-count');
 
     function selectPotion(index) {
       currentPotionIndex = index;
@@ -405,9 +404,6 @@
       }
       if (showcaseDesc) {
         showcaseDesc.setAttribute('data-i18n', potion.descKey);
-      }
-      if (showcaseCount) {
-        showcaseCount.textContent = potion.count;
       }
 
       // Re-trigger current language on newly injected keys
