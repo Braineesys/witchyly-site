@@ -38,7 +38,7 @@ Official landing website for **WitchyLy**, a whimsical casual mobile potion-maki
    - **Hero Section**: 3D logo, Ly portrait, animated magical particles, TestFlight & Google Play download buttons, feature status pills.
    - **Catch. Match. Brew.**: 3-step narrative flow with an interactive visual marketing animation of falling ingredients and movable cauldron.
    - **6-Pillar Features**: Simple Addictive Gameplay, 8 Magical Rooms, 80 Levels, 6 Ingredient Families, Lilly's Grimoire, and Apprentice Leaderboards.
-   - **8 Rooms Explorer**: Interactive room tab switcher and carousel showcasing Living Room, Kitchen, Greenhouse, Laboratory, Library, Attic, and upcoming locked chambers.
+   - **8 Rooms Explorer**: Interactive room tab switcher and carousel showcasing Living Room, Kitchen, Bedroom, Bathroom, Laboratory, Greenhouse, Library, Attic, and upcoming locked chambers.
    - **Lilly's Grimoire**: Interactive potion catalog featuring all 6 potion families (Dark Magic, Creature, Arcane, Nature, Ethereal, Sweets) with instant stat inspection.
    - **Ingredient Families**: Collectible item cards with elemental affinities.
    - **Progression Roadmap**: 80 levels breakdown with milestone rewards (Witch coins, crystals, and grand master hat).

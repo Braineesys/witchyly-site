@@ -36,9 +36,9 @@
       descKey: 'rooms.r3_desc',
       levelsKey: 'rooms.r3_levels',
       badgeKey: 'rooms.badge_locked',
-      img: 'assets/rooms/room_3_greenhouse.jpg',
-      thumb: 'assets/rooms/room_3_greenhouse.jpg',
-      color: '#38B000',
+      img: 'assets/rooms/room_3_bedroom.jpg',
+      thumb: 'assets/rooms/room_3_bedroom.jpg',
+      color: '#7209B7',
       isUnlocked: true
     },
     {
@@ -47,9 +47,9 @@
       descKey: 'rooms.r4_desc',
       levelsKey: 'rooms.r4_levels',
       badgeKey: 'rooms.badge_locked',
-      img: 'assets/rooms/room_4_bedroom.jpg',
-      thumb: 'assets/rooms/room_4_bedroom.jpg',
-      color: '#7209B7',
+      img: 'assets/rooms/room_4_bathroom.jpg',
+      thumb: 'assets/rooms/room_4_bathroom.jpg',
+      color: '#4361EE',
       isUnlocked: true
     },
     {
@@ -58,9 +58,9 @@
       descKey: 'rooms.r5_desc',
       levelsKey: 'rooms.r5_levels',
       badgeKey: 'rooms.badge_locked',
-      img: 'assets/rooms/room_5_bathroom.jpg',
-      thumb: 'assets/rooms/room_5_bathroom.jpg',
-      color: '#4361EE',
+      img: 'assets/rooms/room_5_laboratory.jpg',
+      thumb: 'assets/rooms/room_5_laboratory.jpg',
+      color: '#4CC9F0',
       isUnlocked: true
     },
     {
@@ -69,9 +69,9 @@
       descKey: 'rooms.r6_desc',
       levelsKey: 'rooms.r6_levels',
       badgeKey: 'rooms.badge_locked',
-      img: 'assets/rooms/room_6_laboratory.jpg',
-      thumb: 'assets/rooms/room_6_laboratory.jpg',
-      color: '#4CC9F0',
+      img: 'assets/rooms/room_6_greenhouse.jpg',
+      thumb: 'assets/rooms/room_6_greenhouse.jpg',
+      color: '#38B000',
       isUnlocked: true
     },
     {
