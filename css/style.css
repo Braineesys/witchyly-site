@@ -67,7 +67,9 @@
 /* ==========================================================================
    Base & Reset
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -109,7 +111,12 @@ body.rtl-mode h4 {
 }
 
 /* Typography Defaults */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text-white);
   font-weight: 700;
@@ -419,12 +426,12 @@ button {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 150px 180px, #ffd166, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 300px 90px, #c77dff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 450px 240px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 620px 140px, #ffd166, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 800px 320px, #48cae4, rgba(0,0,0,0));
+    radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 150px 180px, #ffd166, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 300px 90px, #c77dff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 450px 240px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 620px 140px, #ffd166, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 800px 320px, #48cae4, rgba(0, 0, 0, 0));
   background-repeat: repeat;
   background-size: 550px 550px;
   opacity: 0.55;
@@ -490,8 +497,13 @@ button {
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 15px rgba(255, 183, 3, 0.2); }
-  100% { box-shadow: 0 0 28px rgba(255, 183, 3, 0.45); }
+  0% {
+    box-shadow: 0 0 15px rgba(255, 183, 3, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 28px rgba(255, 183, 3, 0.45);
+  }
 }
 
 .hero-logo-box {
@@ -700,8 +712,13 @@ button {
 }
 
 @keyframes float-gentle {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-12px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-12px);
+  }
 }
 
 /* ==========================================================================
@@ -710,7 +727,7 @@ button {
 .story-section {
   padding: 110px 0 100px 0;
   background: radial-gradient(circle at 50% 10%, rgba(157, 78, 221, 0.12) 0%, transparent 60%),
-              linear-gradient(180deg, var(--bg-darkest) 0%, #150824 50%, var(--bg-darkest) 100%);
+    linear-gradient(180deg, var(--bg-darkest) 0%, #150824 50%, var(--bg-darkest) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1060,6 +1077,7 @@ button {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1140,8 +1158,15 @@ button {
 }
 
 @keyframes fadeInLine {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dialogue-avatar-box {
@@ -1403,9 +1428,18 @@ button {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
 }
-.stage-dot.red { background: #ff5964; }
-.stage-dot.yellow { background: #ffca3a; }
-.stage-dot.green { background: #8ac926; }
+
+.stage-dot.red {
+  background: #ff5964;
+}
+
+.stage-dot.yellow {
+  background: #ffca3a;
+}
+
+.stage-dot.green {
+  background: #8ac926;
+}
 
 #gameplay-interactive-stage {
   height: 380px;
@@ -1467,10 +1501,21 @@ button {
 }
 
 @keyframes cauldron-catch-bounce {
-  0% { transform: scale(1); }
-  35% { transform: scale(1.12, 0.9) translateY(-4px); }
-  65% { transform: scale(0.96, 1.04); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.12, 0.9) translateY(-4px);
+  }
+
+  65% {
+    transform: scale(0.96, 1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Overhead 3-max FIFO Floating Tray on Cauldron */
@@ -1619,9 +1664,20 @@ button {
 }
 
 @keyframes slot-pop-bounce {
-  0% { transform: scale(0.2); opacity: 0; }
-  60% { transform: scale(1.22); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.22);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Outcome Announcement Banner (Potion / XP / Curse) */
@@ -1697,9 +1753,20 @@ button {
 }
 
 @keyframes catch-float-up {
-  0% { transform: translate(-50%, 0) scale(0.6); opacity: 1; }
-  50% { transform: translate(-50%, -30px) scale(1.15); opacity: 1; }
-  100% { transform: translate(-50%, -55px) scale(0.8); opacity: 0; }
+  0% {
+    transform: translate(-50%, 0) scale(0.6);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50%, -30px) scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -55px) scale(0.8);
+    opacity: 0;
+  }
 }
 
 .cauldron-spark {
@@ -1718,6 +1785,7 @@ button {
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
+
   100% {
     transform: translate(var(--dx), var(--dy)) scale(0);
     opacity: 0;
@@ -2117,11 +2185,23 @@ button {
 .potion-card-thumb {
   width: 72px;
   height: 72px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  padding: 6px;
+  box-sizing: border-box;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.2) 0%, rgba(20, 6, 38, 0.6) 100%);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 10px;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: all var(--transition-bounce);
+}
+
+.grimoire-potion-card:hover .potion-card-thumb,
+.grimoire-potion-card.active .potion-card-thumb {
+  border-color: rgba(255, 183, 3, 0.6);
+  background: radial-gradient(circle, rgba(255, 183, 3, 0.22) 0%, rgba(48, 16, 80, 0.8) 100%);
+  transform: scale(1.05);
 }
 
 .potion-card-label {
@@ -2395,9 +2475,17 @@ button {
   gap: 4px;
 }
 
-.rank-badge.gold { color: #ffd166; }
-.rank-badge.silver { color: #e0e1dd; }
-.rank-badge.bronze { color: #cd7f32; }
+.rank-badge.gold {
+  color: #ffd166;
+}
+
+.rank-badge.silver {
+  color: #e0e1dd;
+}
+
+.rank-badge.bronze {
+  color: #cd7f32;
+}
 
 .witch-cell {
   display: flex;
@@ -2612,8 +2700,13 @@ button {
   color: var(--text-dark);
 }
 
-#lightbox-prev-btn { left: 24px; }
-#lightbox-next-btn { right: 24px; }
+#lightbox-prev-btn {
+  left: 24px;
+}
+
+#lightbox-next-btn {
+  right: 24px;
+}
 
 /* ==========================================================================
    Download CTA Section
@@ -2753,23 +2846,42 @@ button {
   transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
+}
 
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001s !important;
   }
+
   .reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;
   }
+
   #hero-sparkles-canvas {
     display: none !important;
   }
