@@ -11,6 +11,7 @@ const translations = {
       description: "Enter the magical world of WitchyLy. Catch falling ingredients, brew potions, explore 8 magical rooms and master 80 levels on iOS and Android."
     },
     nav: {
+      story: "Story",
       game: "Game",
       features: "Features",
       rooms: "8 Rooms",
@@ -34,6 +35,23 @@ const translations = {
       pill_levels: "80 Levels to Master",
       pill_potions: "6 Potion Families",
       scroll: "Scroll to explore"
+    },
+    story: {
+      tag: "The Backstory",
+      headline: "Meet the Characters",
+      subtitle: "A young witch, a cunning real-estate goblin, and two wise aunts who spark an enchanted renovation quest.",
+      char_lilly_name: "Lilly",
+      char_lilly_role: "The Witch Hero",
+      char_lilly_desc: "A freshly graduated young witch, wildly enthusiastic and proud to finally own her very first manor. A bit naive when trusting goblin contracts, but determined to turn empty walls into magic!",
+      char_grukk_name: "Grukk",
+      char_grukk_role: "The Sly Goblin Broker",
+      char_grukk_desc: "A fast-talking goblin broker delighted with his deal. He plays on words and tiny legal print, always insisting with a smirk: “Technically, I told the truth!”",
+      char_milly_name: "Aunt Milly",
+      char_milly_role: "The Heartwarming Mentor",
+      char_milly_desc: "Lilly's sweet and caring aunt. Always supportive and encouraging, she sees the sparkling potential in Lilly and gives her the comfort to start anew.",
+      char_tatty_name: "Aunt Tatty",
+      char_tatty_role: "The Wise Alchemist",
+      char_tatty_desc: "A sharp and pragmatic master witch. She cuts through despair with legendary advice: “An empty manor? Make it yours. Every great witch has to start somewhere!”"
     },
     gameplay: {
       tag: "Core Gameplay",
@@ -225,6 +243,7 @@ const translations = {
       description: "Entrez dans le monde enchanteur de WitchyLy. Attrapez les ingrédients, préparez des potions, explorez 8 pièces magiques et maîtrisez 80 niveaux sur iOS et Android."
     },
     nav: {
+      story: "Histoire",
       game: "Jeu",
       features: "Fonctionnalités",
       rooms: "8 Pièces",
@@ -248,6 +267,23 @@ const translations = {
       pill_levels: "80 Niveaux à Maîtriser",
       pill_potions: "6 Familles de Potions",
       scroll: "Faites défiler pour explorer"
+    },
+    story: {
+      tag: "L'Histoire",
+      headline: "Les Personnages",
+      subtitle: "Une jeune sorcière, un courtier gobelin filou et deux tantes inspirantes qui lancent une fabuleuse quête alchimique.",
+      char_lilly_name: "Lilly",
+      char_lilly_role: "La Jeune Sorcière",
+      char_lilly_desc: "Jeune sorcière fraîchement diplômée, passionnée et immensément fière d'avoir enfin son propre manoir. Un rien naïve face aux contrats magiques, mais bien décidée à faire des miracles !",
+      char_grukk_name: "Grukk",
+      char_grukk_role: "Le Courtier Gobelin",
+      char_grukk_desc: "Vendeur de tapis gobelin ravi de sa combine. Il joue sur les mots et les petites lignes du contrat, répétant toujours avec son sourire narquois : « Techniquement, j'ai dit la vérité ! »",
+      char_milly_name: "Tante Milly",
+      char_milly_role: "La Mentore Bienveillante",
+      char_milly_desc: "La tante douce et attentionnée de Lilly. Face à la surprise du manoir vide, sa tendresse et ses encouragements redonnent immédiatement confiance à sa petite-nièce.",
+      char_tatty_name: "Tante Tatty",
+      char_tatty_role: "L'Alchimiste Avisée",
+      char_tatty_desc: "Grande sorcière pragmatique et visionnaire. Elle remet aussitôt Lilly sur les rails : « Pas un meuble ? Fais-en ton royaume. Toute grande sorcière doit bien commencer quelque part ! »"
     },
     gameplay: {
       tag: "Le Gameplay",
@@ -439,6 +475,7 @@ const translations = {
       description: "ادخل عالم WitchyLy الساحر. التقط المكونات المتساقطة، اطبخ الجرعات، استكشف 8 غرف مسحورة واجتز 80 مرحلة على iOS و Android."
     },
     nav: {
+      story: "القصة",
       game: "اللعبة",
       features: "المميزات",
       rooms: "8 غرف",
@@ -462,6 +499,23 @@ const translations = {
       pill_levels: "80 مرحلة ممتعة",
       pill_potions: "6 فصائل جرعات",
       scroll: "مرر للأسفل للاستكشاف"
+    },
+    story: {
+      tag: "الحكاية",
+      headline: "شخصيات القصة",
+      subtitle: "ساحرة شابة، وسمسار غوبلن ماكر، وعمّتان حكيمتان يشعلن شرارة مغامرة تجديد القصر وصنع الجرعات.",
+      char_lilly_name: "ليلي",
+      char_lilly_role: "الساحرة البطلة",
+      char_lilly_desc: "ساحرة شابة متخرجة للتو من الأكاديمية، مفعمة بالحماس والفخر بامتلاك قصرها الخاص. على نياتها عند توقيع العقود، لكن عزيمتها قادرة على ملء الجدران الخالية بأروع السحر!",
+      char_grukk_name: "غروك",
+      char_grukk_role: "سمسار الغوبلن الماكر",
+      char_grukk_desc: "سمسار عقارات من الغوبلن شديد الدهاء وسعيد بصفقته. يتلاعب بالكلمات والخطوط الدقيقة، ليردد مبتسماً ابتسامته المستفزة: «من الناحية التقنية، قلت الصدق تماماً!»",
+      char_milly_name: "العمة ميلي",
+      char_milly_role: "المرشدة الحنونة",
+      char_milly_desc: "عمة ليلي الحبيبة وبلسمها الروحي. دائمة الثناء والتشجيع، وتبث في قلب ليلي الثقة والأمل بأن القصر الفارغ يحمل مستقبلاً ساحراً.",
+      char_tatty_name: "العمة تاتي",
+      char_tatty_role: "الخيميائية الحكيمة",
+      char_tatty_desc: "ساحرة قديرة ذات عقلية عملية صارمة. تحسم الموقف بنصيحتها الذهبية: «قصر خاوٍ؟ اجعليه ملككِ وبصمتكِ. فكل ساحرة عظيمة كانت لها بداية من مكان ما!»"
     },
     gameplay: {
       tag: "أسلوب اللعب",

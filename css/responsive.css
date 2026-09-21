@@ -149,6 +149,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .room-showcase-card {
     grid-template-columns: 1fr;
     padding: 30px;
@@ -213,6 +217,14 @@
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .story-theatre {
+    padding: 28px 18px;
+  }
+
+  .dialogue-line {
+    max-width: 92%;
   }
 
   .progression-roadmap::before {
@@ -289,6 +301,25 @@
 
   .room-showcase-card {
     padding: 20px 16px;
+  }
+
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dialogue-line {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .dialogue-bubble {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .scene-tab-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
   }
 }
 
@@ -401,5 +432,53 @@ body.rtl-mode .stage-cauldron-tray {
   right: auto;
   left: 18px;
   align-items: flex-start;
+}
+
+/* RTL Story & Characters Support */
+html[dir="rtl"] .character-quote,
+body.rtl-mode .character-quote {
+  border-left: none;
+  border-right: 3px solid var(--accent-gold);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  text-align: right;
+}
+
+html[dir="rtl"] .scene-context-card,
+body.rtl-mode .scene-context-card {
+  border-left: 1px solid rgba(255, 183, 3, 0.28);
+  border-right: 4px solid var(--accent-gold);
+  text-align: right;
+}
+
+html[dir="rtl"] .speaker-lilly .dialogue-content,
+body.rtl-mode .speaker-lilly .dialogue-content {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .speaker-lilly .dialogue-bubble,
+body.rtl-mode .speaker-lilly .dialogue-bubble {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 3px;
+  text-align: right;
+}
+
+html[dir="rtl"] .speaker-grukk .dialogue-content,
+html[dir="rtl"] .speaker-milly .dialogue-content,
+html[dir="rtl"] .speaker-tatty .dialogue-content,
+body.rtl-mode .speaker-grukk .dialogue-content,
+body.rtl-mode .speaker-milly .dialogue-content,
+body.rtl-mode .speaker-tatty .dialogue-content {
+  align-items: flex-end;
+}
+
+html[dir="rtl"] .speaker-grukk .dialogue-bubble,
+html[dir="rtl"] .speaker-milly .dialogue-bubble,
+html[dir="rtl"] .speaker-tatty .dialogue-bubble,
+body.rtl-mode .speaker-grukk .dialogue-bubble,
+body.rtl-mode .speaker-milly .dialogue-bubble,
+body.rtl-mode .speaker-tatty .dialogue-bubble {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 14px;
+  text-align: right;
 }
 

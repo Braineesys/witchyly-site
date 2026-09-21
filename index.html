@@ -87,6 +87,7 @@
 
       <nav class="nav-desktop" aria-label="Main Navigation">
         <ul class="nav-menu">
+          <li><a href="#story" class="nav-link" data-i18n="nav.story">Story</a></li>
           <li><a href="#gameplay" class="nav-link" data-i18n="nav.game">Game</a></li>
           <li><a href="#features" class="nav-link" data-i18n="nav.features">Features</a></li>
           <li><a href="#rooms" class="nav-link" data-i18n="nav.rooms">8 Rooms</a></li>
@@ -133,6 +134,7 @@
     </div>
 
     <ul class="mobile-menu-list">
+      <li><a href="#story" class="nav-link" data-i18n="nav.story">Story</a></li>
       <li><a href="#gameplay" class="nav-link" data-i18n="nav.game">Game</a></li>
       <li><a href="#features" class="nav-link" data-i18n="nav.features">Features</a></li>
       <li><a href="#rooms" class="nav-link" data-i18n="nav.rooms">8 Rooms</a></li>
@@ -269,800 +271,940 @@
   </section>
 
   <!-- ========================================================================
+       Story & Characters Section ("The Backstory & Characters")
+       ======================================================================== -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge" data-i18n="story.tag">Backstory & Characters</div>
+        <h2 class="section-title" data-i18n="story.headline">The Grand Manor & The Sneaky Goblin</h2>
+        <p class="section-subtitle" data-i18n="story.subtitle">
+          Meet Lilly, a freshly graduated young witch full of dreams, and discover how a tricky real estate goblin
+          sparked her greatest alchemical adventure.
+        </p>
+      </div>
+
+      <!-- Cast Showcase Sub-header -->
+      <div class="story-sub-header reveal-on-scroll">
+        <h3 class="story-sub-title" data-i18n="story.cast_title">Meet the Characters</h3>
+        <p class="story-sub-desc" data-i18n="story.cast_subtitle">The ambitious young witch, the sly goblin broker, and
+          two wise role models.</p>
+      </div>
+
+      <!-- Characters Grid (4 Main Characters) -->
+      <div class="characters-grid">
+        <!-- Lilly -->
+        <article class="character-card char-card-lilly reveal-on-scroll delay-1">
+          <div class="character-avatar-wrapper">
+            <div class="character-avatar-glow"></div>
+            <img src="assets/characters/Lilly.png" alt="Lilly" class="character-portrait" loading="lazy">
+            <span class="character-role-pill" data-i18n="story.char_lilly_role">The Witch Hero</span>
+          </div>
+          <div class="character-info">
+            <h4 class="character-name" data-i18n="story.char_lilly_name">Lilly</h4>
+            <div class="character-tags">
+              <span class="char-tag" data-i18n="story.char_lilly_tag1">Academy Graduate</span>
+              <span class="char-tag" data-i18n="story.char_lilly_tag2">Wildly Enthusiastic</span>
+              <span class="char-tag" data-i18n="story.char_lilly_tag3">Slightly Naive</span>
+            </div>
+            <p class="character-bio" data-i18n="story.char_lilly_desc">
+              A young witch fresh out of the Academy. Passionate, determined, and brimming with joy to finally own her
+              very first witchy manor. While a little too trusting with goblin contracts, her heart and grit make her an
+              unstoppable brewer.
+            </p>
+            <blockquote class="character-quote" data-i18n="story.char_lilly_quote">
+              “There it is... my very own witchy manor!”
+            </blockquote>
+          </div>
+        </article>
+
+        <!-- Grukk -->
+        <article class="character-card char-card-grukk reveal-on-scroll delay-2">
+          <div class="character-avatar-wrapper">
+            <div class="character-avatar-glow"></div>
+            <img src="assets/characters/Grukk.png" alt="Grukk" class="character-portrait" loading="lazy">
+            <span class="character-role-pill" data-i18n="story.char_grukk_role">The Sly Goblin Broker</span>
+          </div>
+          <div class="character-info">
+            <h4 class="character-name" data-i18n="story.char_grukk_name">Grukk</h4>
+            <div class="character-tags">
+              <span class="char-tag" data-i18n="story.char_grukk_tag1">Fast-Talking Salesman</span>
+              <span class="char-tag" data-i18n="story.char_grukk_tag2">Tiny Print Enthusiast</span>
+              <span class="char-tag" data-i18n="story.char_grukk_tag3">Smug Smile Champion</span>
+            </div>
+            <p class="character-bio" data-i18n="story.char_grukk_desc">
+              A goblin carpet-bagger delighted with his latest property deal. Armed with overflowing sales hype,
+              microscopic fine print, and an insufferably smug grin, his eternal defense is: 'Technically, I told the
+              truth!'
+            </p>
+            <blockquote class="character-quote" data-i18n="story.char_grukk_quote">
+              “And naturally... everything inside is yours!”
+            </blockquote>
+          </div>
+        </article>
+
+        <!-- Aunt Milly -->
+        <article class="character-card char-card-milly reveal-on-scroll delay-3">
+          <div class="character-avatar-wrapper">
+            <div class="character-avatar-glow"></div>
+            <img src="assets/characters/Milly.png" alt="Aunt Milly" class="character-portrait" loading="lazy">
+            <span class="character-role-pill" data-i18n="story.char_milly_role">The Warm-Hearted Mentor</span>
+          </div>
+          <div class="character-info">
+            <h4 class="character-name" data-i18n="story.char_milly_name">Aunt Milly</h4>
+            <div class="character-tags">
+              <span class="char-tag" data-i18n="story.char_milly_tag1">Loving & Supportive</span>
+              <span class="char-tag" data-i18n="story.char_milly_tag2">Gentle Spirit</span>
+              <span class="char-tag" data-i18n="story.char_milly_tag3">Lilly's Greatest Fan</span>
+            </div>
+            <p class="character-bio" data-i18n="story.char_milly_desc">
+              Lilly's sweet, affectionate aunt who always provides unconditional love, comforting encouragement, and
+              pride in her niece. She sees the sparkling promise in Lilly even when circumstances look bleak.
+            </p>
+            <blockquote class="character-quote" data-i18n="story.char_milly_quote">
+              “Oh, Lilly! We're so proud of you, sweetheart!”
+            </blockquote>
+          </div>
+        </article>
+
+        <!-- Aunt Tatty -->
+        <article class="character-card char-card-tatty reveal-on-scroll delay-4">
+          <div class="character-avatar-wrapper">
+            <div class="character-avatar-glow"></div>
+            <img src="assets/characters/Tatty.png" alt="Aunt Tatty" class="character-portrait" loading="lazy">
+            <span class="character-role-pill" data-i18n="story.char_tatty_role">The Wise Alchemist</span>
+          </div>
+          <div class="character-info">
+            <h4 class="character-name" data-i18n="story.char_tatty_name">Aunt Tatty</h4>
+            <div class="character-tags">
+              <span class="char-tag" data-i18n="story.char_tatty_tag1">Master Witch</span>
+              <span class="char-tag" data-i18n="story.char_tatty_tag2">Pragmatic & Sharp</span>
+              <span class="char-tag" data-i18n="story.char_tatty_tag3">Inspiring Leader</span>
+            </div>
+            <p class="character-bio" data-i18n="story.char_tatty_desc">
+              A master witch of renown and sharp pragmatism. Tatty wastes no time weeping over empty rooms. Instead, she
+              delivers the spark that turns despair into triumph: an empty room is simply a canvas waiting for magic.
+            </p>
+            <blockquote class="character-quote" data-i18n="story.char_tatty_quote">
+              “Make it yours. Every great witch has to start somewhere.”
+            </blockquote>
+          </div>
+        </article>
+      </div>
+
+
+      <!-- ========================================================================
        Gameplay Section ("Catch. Match. Brew.")
        ======================================================================== -->
-  <section class="gameplay-section" id="gameplay">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="gameplay.tag">Core Gameplay</div>
-        <h2 class="section-title" data-i18n="gameplay.headline">Catch. Match. Brew.</h2>
-        <p class="section-subtitle" data-i18n="gameplay.subtitle">
-          Slip under the rain of falling ingredients, move your cauldron and catch the right elements to brew magical
-          concoctions… without letting it all overflow!
-        </p>
-      </div>
-
-      <!-- 3 Steps Narrative Grid -->
-      <div class="gameplay-steps-grid">
-        <div class="gameplay-step-card reveal-on-scroll delay-1">
-          <div class="step-number-tag" data-i18n="gameplay.step1_title">01 — Catch</div>
-          <h3 class="step-card-title">Catch Ingredients</h3>
-          <p class="step-card-desc" data-i18n="gameplay.step1_desc">
-            Ingredients rain down from above. Move Ly's cauldron swiftly across the floor and catch the right
-            ingredients before they fall.
-          </p>
-        </div>
-
-        <div class="gameplay-step-card reveal-on-scroll delay-2">
-          <div class="step-number-tag" data-i18n="gameplay.step2_title">02 — Match</div>
-          <h3 class="step-card-title">Match Families</h3>
-          <p class="step-card-desc" data-i18n="gameplay.step2_desc">
-            Combine the right ingredient families. Good combinations create powerful magical brews; bad ones descend
-            into chaos!
-          </p>
-        </div>
-
-        <div class="gameplay-step-card reveal-on-scroll delay-3">
-          <div class="step-number-tag" data-i18n="gameplay.step3_title">03 — Brew</div>
-          <h3 class="step-card-title">Brew Potions</h3>
-          <p class="step-card-desc" data-i18n="gameplay.step3_desc">
-            Create potions, progress through levels, unlock rare recipes and fill Ly's enchanted grimoire to master the
-            craft.
-          </p>
-        </div>
-      </div>
-
-      <!-- Interactive Gameplay Marketing Animation -->
-      <div class="gameplay-interactive-wrapper reveal-on-scroll">
-        <div class="interactive-stage-header">
-          <div class="stage-decor-dots">
-            <span class="stage-dot red"></span>
-            <span class="stage-dot yellow"></span>
-            <span class="stage-dot green"></span>
+      <section class="gameplay-section" id="gameplay">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="gameplay.tag">Core Gameplay</div>
+            <h2 class="section-title" data-i18n="gameplay.headline">Catch. Match. Brew.</h2>
+            <p class="section-subtitle" data-i18n="gameplay.subtitle">
+              Slip under the rain of falling ingredients, move your cauldron and catch the right elements to brew
+              magical
+              concoctions… without letting it all overflow!
+            </p>
           </div>
-          <div class="stage-title-text" data-i18n="gameplay.demo_hint">✨ Interactive cauldron preview — watch the
-            enchanted ingredients fall!</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Move mouse / touch to guide cauldron</div>
-        </div>
 
-        <div id="gameplay-interactive-stage" aria-label="Interactive cauldron preview stage">
-          <!-- Stage Corner HUD Tray (3 Slots: Potion / XP / Curse) -->
-          <div class="stage-cauldron-tray" id="stage-cauldron-tray" aria-label="Cauldron collected ingredients">
-            <div class="tray-label">
-              <span class="tray-sparkle">✨</span>
-              <span class="tray-text" data-i18n="gameplay.cauldron_queue">Brewing Cauldron (3 Slots)</span>
+          <!-- 3 Steps Narrative Grid -->
+          <div class="gameplay-steps-grid">
+            <div class="gameplay-step-card reveal-on-scroll delay-1">
+              <div class="step-number-tag" data-i18n="gameplay.step1_title">01 — Catch</div>
+              <h3 class="step-card-title">Catch Ingredients</h3>
+              <p class="step-card-desc" data-i18n="gameplay.step1_desc">
+                Ingredients rain down from above. Move Ly's cauldron swiftly across the floor and catch the right
+                ingredients before they fall.
+              </p>
             </div>
-            <div class="tray-slots" id="tray-slots">
-              <div class="tray-slot empty" data-slot-index="0" title="Slot 1">
-                <span class="slot-num">1</span>
-              </div>
-              <div class="tray-slot empty" data-slot-index="1" title="Slot 2">
-                <span class="slot-num">2</span>
-              </div>
-              <div class="tray-slot empty" data-slot-index="2" title="Slot 3">
-                <span class="slot-num">3</span>
-              </div>
+
+            <div class="gameplay-step-card reveal-on-scroll delay-2">
+              <div class="step-number-tag" data-i18n="gameplay.step2_title">02 — Match</div>
+              <h3 class="step-card-title">Match Families</h3>
+              <p class="step-card-desc" data-i18n="gameplay.step2_desc">
+                Combine the right ingredient families. Good combinations create powerful magical brews; bad ones descend
+                into chaos!
+              </p>
             </div>
-            <div class="tray-status-text" id="tray-status-text" data-i18n="gameplay.cauldron_status_empty">
-              Catch 3 ingredients to brew!
+
+            <div class="gameplay-step-card reveal-on-scroll delay-3">
+              <div class="step-number-tag" data-i18n="gameplay.step3_title">03 — Brew</div>
+              <h3 class="step-card-title">Brew Potions</h3>
+              <p class="step-card-desc" data-i18n="gameplay.step3_desc">
+                Create potions, progress through levels, unlock rare recipes and fill Ly's enchanted grimoire to master
+                the
+                craft.
+              </p>
             </div>
           </div>
 
-          <!-- Outcome Announcement Banner (Potion / XP / Curse) -->
-          <div class="cauldron-outcome-banner" id="cauldron-outcome-banner" aria-live="polite"></div>
+          <!-- Interactive Gameplay Marketing Animation -->
+          <div class="gameplay-interactive-wrapper reveal-on-scroll">
+            <div class="interactive-stage-header">
+              <div class="stage-decor-dots">
+                <span class="stage-dot red"></span>
+                <span class="stage-dot yellow"></span>
+                <span class="stage-dot green"></span>
+              </div>
+              <div class="stage-title-text" data-i18n="gameplay.demo_hint">✨ Interactive cauldron preview — watch the
+                enchanted ingredients fall!</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Move mouse / touch to guide cauldron</div>
+            </div>
 
-          <!-- The cauldron & Ly element -->
-          <div id="interactive-cauldron">
-            <!-- Overhead 3-slot floating tray -->
-            <div class="cauldron-floating-queue" id="cauldron-floating-queue" aria-hidden="true">
-              <div class="floating-queue-slots" id="floating-queue-slots">
-                <div class="floating-slot empty" data-slot="0"></div>
-                <div class="floating-slot empty" data-slot="1"></div>
-                <div class="floating-slot empty" data-slot="2"></div>
+            <div id="gameplay-interactive-stage" aria-label="Interactive cauldron preview stage">
+              <!-- Stage Corner HUD Tray (3 Slots: Potion / XP / Curse) -->
+              <div class="stage-cauldron-tray" id="stage-cauldron-tray" aria-label="Cauldron collected ingredients">
+                <div class="tray-label">
+                  <span class="tray-sparkle">✨</span>
+                  <span class="tray-text" data-i18n="gameplay.cauldron_queue">Brewing Cauldron (3 Slots)</span>
+                </div>
+                <div class="tray-slots" id="tray-slots">
+                  <div class="tray-slot empty" data-slot-index="0" title="Slot 1">
+                    <span class="slot-num">1</span>
+                  </div>
+                  <div class="tray-slot empty" data-slot-index="1" title="Slot 2">
+                    <span class="slot-num">2</span>
+                  </div>
+                  <div class="tray-slot empty" data-slot-index="2" title="Slot 3">
+                    <span class="slot-num">3</span>
+                  </div>
+                </div>
+                <div class="tray-status-text" id="tray-status-text" data-i18n="gameplay.cauldron_status_empty">
+                  Catch 3 ingredients to brew!
+                </div>
+              </div>
+
+              <!-- Outcome Announcement Banner (Potion / XP / Curse) -->
+              <div class="cauldron-outcome-banner" id="cauldron-outcome-banner" aria-live="polite"></div>
+
+              <!-- The cauldron & Ly element -->
+              <div id="interactive-cauldron">
+                <!-- Overhead 3-slot floating tray -->
+                <div class="cauldron-floating-queue" id="cauldron-floating-queue" aria-hidden="true">
+                  <div class="floating-queue-slots" id="floating-queue-slots">
+                    <div class="floating-slot empty" data-slot="0"></div>
+                    <div class="floating-slot empty" data-slot="1"></div>
+                    <div class="floating-slot empty" data-slot="2"></div>
+                  </div>
+                </div>
+                <div class="cauldron-sprite">
+                  <img src="assets/characters/ly_cauldron_clean.png" alt="Ly with Cauldron">
+                </div>
               </div>
             </div>
-            <div class="cauldron-sprite">
-              <img src="assets/characters/ly_cauldron_clean.png" alt="Ly with Cauldron">
+
+            <div class="interactive-hint">
+              Catch the floating books, skulls, and crystal orbs! Real game controls sync smoothly on touchscreen.
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="interactive-hint">
-          Catch the floating books, skulls, and crystal orbs! Real game controls sync smoothly on touchscreen.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
+      <!-- ========================================================================
        Features Section (6 Pillars)
        ======================================================================== -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="features.tag">Spellbinding Features</div>
-        <h2 class="section-title" data-i18n="features.headline">Everything you need for an enchanted adventure</h2>
-        <p class="section-subtitle" data-i18n="features.subtitle">
-          A casual game perfect for short sessions, packed with rising challenges and heartwarming witchy charm.
-        </p>
-      </div>
-
-      <div class="features-grid">
-        <!-- Feature 1 -->
-        <div class="feature-card reveal-on-scroll delay-1">
-          <div class="feature-icon-box">🪄</div>
-          <h3 class="feature-title" data-i18n="features.f1_title">Simple, Addictive Gameplay</h3>
-          <p class="feature-desc" data-i18n="features.f1_desc">
-            Catch falling ingredients, match them carefully and brew the perfect potion. Easy to pick up, hard to put
-            down.
-          </p>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="feature-card reveal-on-scroll delay-2">
-          <div class="feature-icon-box">🏠</div>
-          <h3 class="feature-title" data-i18n="features.f2_title">8 Magical Rooms</h3>
-          <p class="feature-desc" data-i18n="features.f2_desc">
-            From the Living Room to the Kitchen, Bedroom, and Attic: every room in Ly's house hides its own
-            challenges.
-          </p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="feature-card reveal-on-scroll delay-3">
-          <div class="feature-icon-box">⭐</div>
-          <h3 class="feature-title" data-i18n="features.f3_title">80 Levels to Master</h3>
-          <p class="feature-desc" data-i18n="features.f3_desc">
-            Dozens of levels with rising difficulty, special timer rounds, and rewarding alchemical challenges.
-          </p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="feature-card reveal-on-scroll delay-1">
-          <div class="feature-icon-box">🌿</div>
-          <h3 class="feature-title" data-i18n="features.f4_title">6 Ingredient Families</h3>
-          <p class="feature-desc" data-i18n="features.f4_desc">
-            Creature, Nature, Arcane, Dark Magic, Ethereal, and Sweets: learn to pair the right families to succeed.
-          </p>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="feature-card reveal-on-scroll delay-2">
-          <div class="feature-icon-box">
-            <img src="assets/grimoire/grimoire_icon.png" alt="Grimoire Icon">
+      <section class="features-section" id="features">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="features.tag">Spellbinding Features</div>
+            <h2 class="section-title" data-i18n="features.headline">Everything you need for an enchanted adventure</h2>
+            <p class="section-subtitle" data-i18n="features.subtitle">
+              A casual game perfect for short sessions, packed with rising challenges and heartwarming witchy charm.
+            </p>
           </div>
-          <h3 class="feature-title" data-i18n="features.f5_title">Lilly's Grimoire</h3>
-          <p class="feature-desc" data-i18n="features.f5_desc">
-            A faithful enchanted grimoire that guides you every step of the way, keeping track of all your discoveries.
-          </p>
-        </div>
 
-        <!-- Feature 6 -->
-        <div class="feature-card reveal-on-scroll delay-3">
-          <div class="feature-icon-box">🏆</div>
-          <h3 class="feature-title" data-i18n="features.f6_title">Apprentice Leaderboards</h3>
-          <p class="feature-desc" data-i18n="features.f6_desc">
-            Measure yourself against fellow apprentice witches and climb to the top of the magical academy.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card reveal-on-scroll delay-1">
+              <div class="feature-icon-box">🪄</div>
+              <h3 class="feature-title" data-i18n="features.f1_title">Simple, Addictive Gameplay</h3>
+              <p class="feature-desc" data-i18n="features.f1_desc">
+                Catch falling ingredients, match them carefully and brew the perfect potion. Easy to pick up, hard to
+                put
+                down.
+              </p>
+            </div>
 
-  <!-- ========================================================================
+            <!-- Feature 2 -->
+            <div class="feature-card reveal-on-scroll delay-2">
+              <div class="feature-icon-box">🏠</div>
+              <h3 class="feature-title" data-i18n="features.f2_title">8 Magical Rooms</h3>
+              <p class="feature-desc" data-i18n="features.f2_desc">
+                From the Living Room to the Kitchen, Bedroom, and Attic: every room in Ly's house hides its own
+                challenges.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card reveal-on-scroll delay-3">
+              <div class="feature-icon-box">⭐</div>
+              <h3 class="feature-title" data-i18n="features.f3_title">80 Levels to Master</h3>
+              <p class="feature-desc" data-i18n="features.f3_desc">
+                Dozens of levels with rising difficulty, special timer rounds, and rewarding alchemical challenges.
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card reveal-on-scroll delay-1">
+              <div class="feature-icon-box">🌿</div>
+              <h3 class="feature-title" data-i18n="features.f4_title">6 Ingredient Families</h3>
+              <p class="feature-desc" data-i18n="features.f4_desc">
+                Creature, Nature, Arcane, Dark Magic, Ethereal, and Sweets: learn to pair the right families to succeed.
+              </p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-card reveal-on-scroll delay-2">
+              <div class="feature-icon-box">
+                <img src="assets/grimoire/grimoire_icon.png" alt="Grimoire Icon">
+              </div>
+              <h3 class="feature-title" data-i18n="features.f5_title">Lilly's Grimoire</h3>
+              <p class="feature-desc" data-i18n="features.f5_desc">
+                A faithful enchanted grimoire that guides you every step of the way, keeping track of all your
+                discoveries.
+              </p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-card reveal-on-scroll delay-3">
+              <div class="feature-icon-box">🏆</div>
+              <h3 class="feature-title" data-i18n="features.f6_title">Apprentice Leaderboards</h3>
+              <p class="feature-desc" data-i18n="features.f6_desc">
+                Measure yourself against fellow apprentice witches and climb to the top of the magical academy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================
        8 Rooms Section ("A House Full of Magic")
        ======================================================================== -->
-  <section class="rooms-section" id="rooms">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="rooms.tag">Explore Ly's Manor</div>
-        <h2 class="section-title" data-i18n="rooms.headline">A House Full of Magic</h2>
-        <p class="section-subtitle" data-i18n="rooms.subtitle">
-          From the Living Room to the Kitchen, the Bedroom to the Attic: every room in Ly's house hides its own
-          atmosphere.
-        </p>
-      </div>
+      <section class="rooms-section" id="rooms">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="rooms.tag">Explore Ly's Manor</div>
+            <h2 class="section-title" data-i18n="rooms.headline">A House Full of Magic</h2>
+            <p class="section-subtitle" data-i18n="rooms.subtitle">
+              From the Living Room to the Kitchen, the Bedroom to the Attic: every room in Ly's house hides its own
+              atmosphere.
+            </p>
+          </div>
 
-      <!-- 8 Room Navigation Tabs -->
-      <div class="room-tabs-nav reveal-on-scroll" id="room-tabs-list" role="tablist">
-        <button class="room-tab-item active" data-room-index="0" role="tab" aria-selected="true"
-          data-i18n="rooms.tab_r1">Living Room</button>
-        <button class="room-tab-item" data-room-index="1" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r2">Kitchen</button>
-        <button class="room-tab-item" data-room-index="2" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r3">Bedroom</button>
-        <button class="room-tab-item" data-room-index="3" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r4">Bathroom</button>
-        <button class="room-tab-item" data-room-index="4" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r5">Laboratory</button>
-        <button class="room-tab-item" data-room-index="5" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r6">Greenhouse</button>
-        <button class="room-tab-item" data-room-index="6" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r7">Library</button>
-        <button class="room-tab-item" data-room-index="7" role="tab" aria-selected="false"
-          data-i18n="rooms.tab_r8">Attic</button>
-      </div>
+          <!-- 8 Room Navigation Tabs -->
+          <div class="room-tabs-nav reveal-on-scroll" id="room-tabs-list" role="tablist">
+            <button class="room-tab-item active" data-room-index="0" role="tab" aria-selected="true"
+              data-i18n="rooms.tab_r1">Living Room</button>
+            <button class="room-tab-item" data-room-index="1" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r2">Kitchen</button>
+            <button class="room-tab-item" data-room-index="2" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r3">Bedroom</button>
+            <button class="room-tab-item" data-room-index="3" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r4">Bathroom</button>
+            <button class="room-tab-item" data-room-index="4" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r5">Laboratory</button>
+            <button class="room-tab-item" data-room-index="5" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r6">Greenhouse</button>
+            <button class="room-tab-item" data-room-index="6" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r7">Library</button>
+            <button class="room-tab-item" data-room-index="7" role="tab" aria-selected="false"
+              data-i18n="rooms.tab_r8">Attic</button>
+          </div>
 
-      <!-- Interactive Room Showcase Box -->
-      <div class="room-showcase-card reveal-on-scroll delay-1" id="room-showcase">
-        <div class="room-image-frame" id="active-room-frame">
-          <img src="assets/rooms/room_1_living_room.jpg" alt="Living Room Selection" class="room-main-image"
-            id="active-room-image">
-        </div>
+          <!-- Interactive Room Showcase Box -->
+          <div class="room-showcase-card reveal-on-scroll delay-1" id="room-showcase">
+            <div class="room-image-frame" id="active-room-frame">
+              <img src="assets/rooms/room_1_living_room.jpg" alt="Living Room Selection" class="room-main-image"
+                id="active-room-image">
+            </div>
 
-        <div class="room-details-content">
-          <span class="room-status-badge badge-featured" id="active-room-badge"
-            data-i18n="rooms.badge_featured">Featured in Game Art</span>
-          <h3 class="room-title-heading" id="active-room-title" data-i18n="rooms.r1_name">1. Living Room</h3>
-          <span class="room-level-span" id="active-room-levels" data-i18n="rooms.r1_levels">Levels 1 – 10</span>
-          <p class="room-desc-body" id="active-room-desc" data-i18n="rooms.r1_desc">
-            Gothic arched windows, moonlight starry skies, and the mystic purple star rug where Ly's adventure begins.
-          </p>
+            <div class="room-details-content">
+              <span class="room-status-badge badge-featured" id="active-room-badge"
+                data-i18n="rooms.badge_featured">Featured in Game Art</span>
+              <h3 class="room-title-heading" id="active-room-title" data-i18n="rooms.r1_name">1. Living Room</h3>
+              <span class="room-level-span" id="active-room-levels" data-i18n="rooms.r1_levels">Levels 1 – 10</span>
+              <p class="room-desc-body" id="active-room-desc" data-i18n="rooms.r1_desc">
+                Gothic arched windows, moonlight starry skies, and the mystic purple star rug where Ly's adventure
+                begins.
+              </p>
 
-          <div class="room-nav-controls">
-            <button class="room-nav-arrow prev-arrow" id="room-prev-btn" aria-label="Previous Room">◀</button>
-            <button class="room-nav-arrow next-arrow" id="room-next-btn" aria-label="Next Room">▶</button>
+              <div class="room-nav-controls">
+                <button class="room-nav-arrow prev-arrow" id="room-prev-btn" aria-label="Previous Room">◀</button>
+                <button class="room-nav-arrow next-arrow" id="room-next-btn" aria-label="Next Room">▶</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ========================================================================
+      <!-- ========================================================================
        Lilly's Grimoire Section ("Every potion tells a story")
        ======================================================================== -->
-  <section class="grimoire-section" id="grimoire">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="grimoire.tag">Enchanted Spellbook</div>
-        <h2 class="section-title" data-i18n="grimoire.headline">Every potion tells a story.</h2>
-        <p class="section-subtitle" data-i18n="grimoire.subtitle">
-          Discover magical combinations, record your creations and follow Ly's journey through her enchanted grimoire.
-        </p>
-      </div>
-
-      <div class="grimoire-book-wrapper reveal-on-scroll">
-        <div class="grimoire-book-header">
-          <div class="grimoire-icon-title">
-            <img src="assets/grimoire/grimoire_icon.png" alt="Smiling Grimoire Book" class="grimoire-mascot-img">
-            <h3 class="grimoire-header-title">Lilly's Grimoire</h3>
-          </div>
-        </div>
-
-        <!-- Selected Potion Showcase Inspector -->
-        <div class="grimoire-inspect-card">
-          <div class="showcase-potion-display">
-            <div class="showcase-bottle-frame">
-              <img src="assets/potions/potion_dark_magic_hires.jpg" alt="Dark Magic Potion" id="showcase-potion-img">
-            </div>
-          </div>
-
-          <div class="showcase-potion-meta">
-            <span class="showcase-type-tag" id="showcase-potion-type" data-i18n="grimoire.p1_type">Volatile
-              Essence</span>
-            <h3 class="showcase-name-title" id="showcase-potion-title" data-i18n="grimoire.p1_name">Dark Magic</h3>
-            <p class="showcase-desc-text" id="showcase-potion-desc" data-i18n="grimoire.p1_desc">
-              Distilled shadow essence and ancient bone runes. Good combinations create explosive alchemical energy!
+      <section class="grimoire-section" id="grimoire">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="grimoire.tag">Enchanted Spellbook</div>
+            <h2 class="section-title" data-i18n="grimoire.headline">Every potion tells a story.</h2>
+            <p class="section-subtitle" data-i18n="grimoire.subtitle">
+              Discover magical combinations, record your creations and follow Ly's journey through her enchanted
+              grimoire.
             </p>
           </div>
+
+          <div class="grimoire-book-wrapper reveal-on-scroll">
+            <div class="grimoire-book-header">
+              <div class="grimoire-icon-title">
+                <img src="assets/grimoire/grimoire_icon.png" alt="Smiling Grimoire Book" class="grimoire-mascot-img">
+                <h3 class="grimoire-header-title">Lilly's Grimoire</h3>
+              </div>
+            </div>
+
+            <!-- Selected Potion Showcase Inspector -->
+            <div class="grimoire-inspect-card">
+              <div class="showcase-potion-display">
+                <div class="showcase-bottle-frame">
+                  <img src="assets/potions/potion_dark_magic_hires.jpg" alt="Dark Magic Potion"
+                    id="showcase-potion-img">
+                </div>
+              </div>
+
+              <div class="showcase-potion-meta">
+                <span class="showcase-type-tag" id="showcase-potion-type" data-i18n="grimoire.p1_type">Volatile
+                  Essence</span>
+                <h3 class="showcase-name-title" id="showcase-potion-title" data-i18n="grimoire.p1_name">Dark Magic</h3>
+                <p class="showcase-desc-text" id="showcase-potion-desc" data-i18n="grimoire.p1_desc">
+                  Distilled shadow essence and ancient bone runes. Good combinations create explosive alchemical energy!
+                </p>
+              </div>
+            </div>
+
+            <!-- Potion Cards Shelf -->
+            <div class="grimoire-potions-shelf">
+              <!-- Card 1: Dark Magic -->
+              <div class="grimoire-potion-card active" tabindex="0" role="button"
+                aria-label="Inspect Dark Magic Potion">
+                <img src="assets/potions/potion_dark_magic_hires.jpg" alt="Dark Magic" class="potion-card-thumb">
+                <div class="potion-card-label" data-i18n="grimoire.p1_name">Dark Magic</div>
+              </div>
+
+              <!-- Card 2: Creature -->
+              <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Creature Potion">
+                <img src="assets/potions/potion_creature_hires.jpg" alt="Creature Potion" class="potion-card-thumb">
+                <div class="potion-card-label" data-i18n="grimoire.p2_name">Creature Potion</div>
+              </div>
+
+              <!-- Card 3: Arcane -->
+              <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Arcane Potion">
+                <img src="assets/potions/potion_arcane_hires.jpg" alt="Arcane Potion" class="potion-card-thumb">
+                <div class="potion-card-label" data-i18n="grimoire.p3_name">Arcane Potion</div>
+              </div>
+
+              <!-- Card 4: Nature -->
+              <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Nature Potion">
+                <img src="assets/potions/potion_nature_hires.jpg" alt="Nature Potion" class="potion-card-thumb">
+                <div class="potion-card-label" data-i18n="grimoire.p4_name">Nature Potion</div>
+              </div>
+
+              <!-- Card 5: Ethereal -->
+              <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Ethereal Potion">
+                <img src="assets/potions/potion_ethereal_hires.jpg" alt="Ethereal Potion" class="potion-card-thumb">
+                <div class="potion-card-label" data-i18n="grimoire.p5_name">Ethereal Potion</div>
+              </div>
+
+              <!-- Card 6: Sweets -->
+              <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Sweets Potion">
+                <img src="assets/potions/potion_sweets_hires.jpg" alt="Sweets Potion" class="potion-card-thumb">
+                <div class="potion-card-label" data-i18n="grimoire.p6_name">Sweets Potion</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- Potion Cards Shelf -->
-        <div class="grimoire-potions-shelf">
-          <!-- Card 1: Dark Magic -->
-          <div class="grimoire-potion-card active" tabindex="0" role="button" aria-label="Inspect Dark Magic Potion">
-            <img src="assets/potions/potion_dark_magic_hires.jpg" alt="Dark Magic" class="potion-card-thumb">
-            <div class="potion-card-label" data-i18n="grimoire.p1_name">Dark Magic</div>
-          </div>
-
-          <!-- Card 2: Creature -->
-          <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Creature Potion">
-            <img src="assets/potions/potion_creature_hires.jpg" alt="Creature Potion" class="potion-card-thumb">
-            <div class="potion-card-label" data-i18n="grimoire.p2_name">Creature Potion</div>
-          </div>
-
-          <!-- Card 3: Arcane -->
-          <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Arcane Potion">
-            <img src="assets/potions/potion_arcane_hires.jpg" alt="Arcane Potion" class="potion-card-thumb">
-            <div class="potion-card-label" data-i18n="grimoire.p3_name">Arcane Potion</div>
-          </div>
-
-          <!-- Card 4: Nature -->
-          <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Nature Potion">
-            <img src="assets/potions/potion_nature_hires.jpg" alt="Nature Potion" class="potion-card-thumb">
-            <div class="potion-card-label" data-i18n="grimoire.p4_name">Nature Potion</div>
-          </div>
-
-          <!-- Card 5: Ethereal -->
-          <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Ethereal Potion">
-            <img src="assets/potions/potion_ethereal_hires.jpg" alt="Ethereal Potion" class="potion-card-thumb">
-            <div class="potion-card-label" data-i18n="grimoire.p5_name">Ethereal Potion</div>
-          </div>
-
-          <!-- Card 6: Sweets -->
-          <div class="grimoire-potion-card" tabindex="0" role="button" aria-label="Inspect Sweets Potion">
-            <img src="assets/potions/potion_sweets_hires.jpg" alt="Sweets Potion" class="potion-card-thumb">
-            <div class="potion-card-label" data-i18n="grimoire.p6_name">Sweets Potion</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
+      <!-- ========================================================================
        Ingredient Families Section
        ======================================================================== -->
-  <section class="ingredients-section" id="ingredients">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="ingredients.tag">Alchemical Families</div>
-        <h2 class="section-title" data-i18n="ingredients.headline">6 Families to Combine</h2>
-        <p class="section-subtitle" data-i18n="ingredients.subtitle">
-          Catch 3 of the same family for a potion, 2 of the same for XP, or 3 different families and it's a Curse!
-        </p>
-      </div>
-
-      <div class="ingredients-grid">
-        <!-- Family 1: Creature -->
-        <div class="ingredient-family-card reveal-on-scroll delay-1">
-          <div class="family-badge-header">
-            <div class="family-icon">
-              <img src="assets/ingredients/sprites/green_frog.png" alt="Creature Family" class="family-header-sprite">
-            </div>
-            <span class="family-badge-tag">Family 01</span>
+      <section class="ingredients-section" id="ingredients">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="ingredients.tag">Alchemical Families</div>
+            <h2 class="section-title" data-i18n="ingredients.headline">6 Families to Combine</h2>
+            <p class="section-subtitle" data-i18n="ingredients.subtitle">
+              Catch 3 of the same family for a potion, 2 of the same for XP, or 3 different families and it's a Curse!
+            </p>
           </div>
-          <h3 class="family-title" data-i18n="ingredients.fam1_title">Creature Family</h3>
-          <div class="family-potion-badge" data-i18n="ingredients.fam1_potion">Brews: Creature Potion</div>
-          <p class="family-desc" data-i18n="ingredients.fam1_desc">
-            Living creatures, Unpredictable movement, Chaos and agility
-          </p>
-          <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/green_frog.png" alt="Frog" class="family-sprite-thumb" title="Frog">
-            <img src="assets/ingredients/sprites/spider.png" alt="Spider" class="family-sprite-thumb" title="Spider">
-            <img src="assets/ingredients/sprites/scarab_beetle.png" alt="Scarab" class="family-sprite-thumb"
-              title="Scarab">
-            <img src="assets/ingredients/sprites/scorpion.png" alt="Scorpion" class="family-sprite-thumb"
-              title="Scorpion">
+
+          <div class="ingredients-grid">
+            <!-- Family 1: Creature -->
+            <div class="ingredient-family-card reveal-on-scroll delay-1">
+              <div class="family-badge-header">
+                <div class="family-icon">
+                  <img src="assets/ingredients/sprites/green_frog.png" alt="Creature Family"
+                    class="family-header-sprite">
+                </div>
+                <span class="family-badge-tag">Family 01</span>
+              </div>
+              <h3 class="family-title" data-i18n="ingredients.fam1_title">Creature Family</h3>
+              <div class="family-potion-badge" data-i18n="ingredients.fam1_potion">Brews: Creature Potion</div>
+              <p class="family-desc" data-i18n="ingredients.fam1_desc">
+                Living creatures, Unpredictable movement, Chaos and agility
+              </p>
+              <div class="family-sprites-row">
+                <img src="assets/ingredients/sprites/green_frog.png" alt="Frog" class="family-sprite-thumb"
+                  title="Frog">
+                <img src="assets/ingredients/sprites/spider.png" alt="Spider" class="family-sprite-thumb"
+                  title="Spider">
+                <img src="assets/ingredients/sprites/scarab_beetle.png" alt="Scarab" class="family-sprite-thumb"
+                  title="Scarab">
+                <img src="assets/ingredients/sprites/scorpion.png" alt="Scorpion" class="family-sprite-thumb"
+                  title="Scorpion">
+              </div>
+            </div>
+
+            <!-- Family 2: Arcane -->
+            <div class="ingredient-family-card reveal-on-scroll delay-2">
+              <div class="family-badge-header">
+                <div class="family-icon">
+                  <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Arcane Family"
+                    class="family-header-sprite">
+                </div>
+                <span class="family-badge-tag">Family 02</span>
+              </div>
+              <h3 class="family-title" data-i18n="ingredients.fam2_title">Arcane Family</h3>
+              <div class="family-potion-badge" data-i18n="ingredients.fam2_potion">Brews: Arcane Potion</div>
+              <p class="family-desc" data-i18n="ingredients.fam2_desc">
+                Magical artifacts, Precious objects, Arcane energy
+              </p>
+              <div class="family-sprites-row">
+                <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Purple Crystal"
+                  class="family-sprite-thumb" title="Purple Crystal">
+                <img src="assets/ingredients/sprites/ruby_gem.png" alt="Ruby" class="family-sprite-thumb" title="Ruby">
+                <img src="assets/ingredients/sprites/rune_g.png" alt="Rune" class="family-sprite-thumb" title="Rune">
+                <img src="assets/ingredients/sprites/crystal_ball.png" alt="Magic Orb" class="family-sprite-thumb"
+                  title="Magic Orb">
+              </div>
+            </div>
+
+            <!-- Family 3: Nature -->
+            <div class="ingredient-family-card reveal-on-scroll delay-3">
+              <div class="family-badge-header">
+                <div class="family-icon">
+                  <img src="assets/ingredients/sprites/mushroom.png" alt="Nature Family" class="family-header-sprite">
+                </div>
+                <span class="family-badge-tag">Family 03</span>
+              </div>
+              <h3 class="family-title" data-i18n="ingredients.fam3_title">Nature Family</h3>
+              <div class="family-potion-badge" data-i18n="ingredients.fam3_potion">Brews: Nature Potion</div>
+              <p class="family-desc" data-i18n="ingredients.fam3_desc">
+                Organic ingredients, Living world, Natural magic
+              </p>
+              <div class="family-sprites-row">
+                <img src="assets/ingredients/sprites/mushroom.png" alt="Mushroom" class="family-sprite-thumb"
+                  title="Mushroom">
+                <img src="assets/ingredients/sprites/dragon_egg.png" alt="Dragon Egg" class="family-sprite-thumb"
+                  title="Dragon Egg">
+                <img src="assets/ingredients/sprites/thorny_nut.png" alt="Thorny Plant" class="family-sprite-thumb"
+                  title="Thorny Plant">
+                <img src="assets/ingredients/sprites/rainbow_shell.png" alt="Snail Shell" class="family-sprite-thumb"
+                  title="Snail Shell">
+              </div>
+            </div>
+
+            <!-- Family 4: Dark Magic -->
+            <div class="ingredient-family-card reveal-on-scroll delay-1">
+              <div class="family-badge-header">
+                <div class="family-icon">
+                  <img src="assets/ingredients/sprites/skull.png" alt="Dark Magic Family" class="family-header-sprite">
+                </div>
+                <span class="family-badge-tag">Family 04</span>
+              </div>
+              <h3 class="family-title" data-i18n="ingredients.fam4_title">Dark Magic Family</h3>
+              <div class="family-potion-badge" data-i18n="ingredients.fam4_potion">Brews: Dark Potion</div>
+              <p class="family-desc" data-i18n="ingredients.fam4_desc">
+                Curses, Forbidden magic, Dark alchemy
+              </p>
+              <div class="family-sprites-row">
+                <img src="assets/ingredients/sprites/skull.png" alt="Skull" class="family-sprite-thumb" title="Skull">
+                <img src="assets/ingredients/sprites/eyeball.png" alt="Eyeball" class="family-sprite-thumb"
+                  title="Eyeball">
+                <img src="assets/ingredients/sprites/black_rose.png" alt="Black Rose" class="family-sprite-thumb"
+                  title="Black Rose">
+                <img src="assets/ingredients/sprites/feather.png" alt="Raven Feather" class="family-sprite-thumb"
+                  title="Raven Feather">
+              </div>
+            </div>
+
+            <!-- Family 5: Ethereal -->
+            <div class="ingredient-family-card reveal-on-scroll delay-2">
+              <div class="family-badge-header">
+                <div class="family-icon">
+                  <img src="assets/ingredients/sprites/firefly.png" alt="Ethereal Family" class="family-header-sprite">
+                </div>
+                <span class="family-badge-tag">Family 05</span>
+              </div>
+              <h3 class="family-title" data-i18n="ingredients.fam5_title">Ethereal Family</h3>
+              <div class="family-potion-badge" data-i18n="ingredients.fam5_potion">Brews: Ethereal Potion</div>
+              <p class="family-desc" data-i18n="ingredients.fam5_desc">
+                Spirits, Magical energy, Floating elements
+              </p>
+              <div class="family-sprites-row">
+                <img src="assets/ingredients/sprites/firefly.png" alt="Firefly" class="family-sprite-thumb"
+                  title="Firefly">
+                <img src="assets/ingredients/sprites/spell_scroll.png" alt="Scroll" class="family-sprite-thumb"
+                  title="Scroll">
+                <img src="assets/ingredients/sprites/soul_flame.png" alt="Blue Flame" class="family-sprite-thumb"
+                  title="Blue Flame">
+                <img src="assets/ingredients/sprites/fire_flame.png" alt="Orange Flame" class="family-sprite-thumb"
+                  title="Orange Flame">
+              </div>
+            </div>
+
+            <!-- Family 6: Sweets -->
+            <div class="ingredient-family-card reveal-on-scroll delay-3">
+              <div class="family-badge-header">
+                <div class="family-icon">
+                  <img src="assets/ingredients/sprites/candy.png" alt="Sweets Family" class="family-header-sprite">
+                </div>
+                <span class="family-badge-tag">Family 06</span>
+              </div>
+              <h3 class="family-title" data-i18n="ingredients.fam6_title">Sweets Family</h3>
+              <div class="family-potion-badge" data-i18n="ingredients.fam6_potion">Brews: Sweet Potion</div>
+              <p class="family-desc" data-i18n="ingredients.fam6_desc">
+                Treats, Mischievous magic, Weird witch snacks
+              </p>
+              <div class="family-sprites-row">
+                <img src="assets/ingredients/sprites/candy.png" alt="Candy" class="family-sprite-thumb" title="Candy">
+                <img src="assets/ingredients/sprites/cupcake.png" alt="Cupcake" class="family-sprite-thumb"
+                  title="Cupcake">
+                <img src="assets/ingredients/sprites/slime_cookie.png" alt="Moldy Cookie" class="family-sprite-thumb"
+                  title="Moldy Cookie">
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Family 2: Arcane -->
-        <div class="ingredient-family-card reveal-on-scroll delay-2">
-          <div class="family-badge-header">
-            <div class="family-icon">
-              <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Arcane Family"
-                class="family-header-sprite">
-            </div>
-            <span class="family-badge-tag">Family 02</span>
-          </div>
-          <h3 class="family-title" data-i18n="ingredients.fam2_title">Arcane Family</h3>
-          <div class="family-potion-badge" data-i18n="ingredients.fam2_potion">Brews: Arcane Potion</div>
-          <p class="family-desc" data-i18n="ingredients.fam2_desc">
-            Magical artifacts, Precious objects, Arcane energy
-          </p>
-          <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/crystal_diamond.png" alt="Purple Crystal" class="family-sprite-thumb"
-              title="Purple Crystal">
-            <img src="assets/ingredients/sprites/ruby_gem.png" alt="Ruby" class="family-sprite-thumb" title="Ruby">
-            <img src="assets/ingredients/sprites/rune_g.png" alt="Rune" class="family-sprite-thumb" title="Rune">
-            <img src="assets/ingredients/sprites/crystal_ball.png" alt="Magic Orb" class="family-sprite-thumb"
-              title="Magic Orb">
-          </div>
-        </div>
-
-        <!-- Family 3: Nature -->
-        <div class="ingredient-family-card reveal-on-scroll delay-3">
-          <div class="family-badge-header">
-            <div class="family-icon">
-              <img src="assets/ingredients/sprites/mushroom.png" alt="Nature Family" class="family-header-sprite">
-            </div>
-            <span class="family-badge-tag">Family 03</span>
-          </div>
-          <h3 class="family-title" data-i18n="ingredients.fam3_title">Nature Family</h3>
-          <div class="family-potion-badge" data-i18n="ingredients.fam3_potion">Brews: Nature Potion</div>
-          <p class="family-desc" data-i18n="ingredients.fam3_desc">
-            Organic ingredients, Living world, Natural magic
-          </p>
-          <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/mushroom.png" alt="Mushroom" class="family-sprite-thumb"
-              title="Mushroom">
-            <img src="assets/ingredients/sprites/dragon_egg.png" alt="Dragon Egg" class="family-sprite-thumb"
-              title="Dragon Egg">
-            <img src="assets/ingredients/sprites/thorny_nut.png" alt="Thorny Plant" class="family-sprite-thumb"
-              title="Thorny Plant">
-            <img src="assets/ingredients/sprites/rainbow_shell.png" alt="Snail Shell" class="family-sprite-thumb"
-              title="Snail Shell">
-          </div>
-        </div>
-
-        <!-- Family 4: Dark Magic -->
-        <div class="ingredient-family-card reveal-on-scroll delay-1">
-          <div class="family-badge-header">
-            <div class="family-icon">
-              <img src="assets/ingredients/sprites/skull.png" alt="Dark Magic Family" class="family-header-sprite">
-            </div>
-            <span class="family-badge-tag">Family 04</span>
-          </div>
-          <h3 class="family-title" data-i18n="ingredients.fam4_title">Dark Magic Family</h3>
-          <div class="family-potion-badge" data-i18n="ingredients.fam4_potion">Brews: Dark Potion</div>
-          <p class="family-desc" data-i18n="ingredients.fam4_desc">
-            Curses, Forbidden magic, Dark alchemy
-          </p>
-          <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/skull.png" alt="Skull" class="family-sprite-thumb" title="Skull">
-            <img src="assets/ingredients/sprites/eyeball.png" alt="Eyeball" class="family-sprite-thumb" title="Eyeball">
-            <img src="assets/ingredients/sprites/black_rose.png" alt="Black Rose" class="family-sprite-thumb"
-              title="Black Rose">
-            <img src="assets/ingredients/sprites/feather.png" alt="Raven Feather" class="family-sprite-thumb"
-              title="Raven Feather">
-          </div>
-        </div>
-
-        <!-- Family 5: Ethereal -->
-        <div class="ingredient-family-card reveal-on-scroll delay-2">
-          <div class="family-badge-header">
-            <div class="family-icon">
-              <img src="assets/ingredients/sprites/firefly.png" alt="Ethereal Family" class="family-header-sprite">
-            </div>
-            <span class="family-badge-tag">Family 05</span>
-          </div>
-          <h3 class="family-title" data-i18n="ingredients.fam5_title">Ethereal Family</h3>
-          <div class="family-potion-badge" data-i18n="ingredients.fam5_potion">Brews: Ethereal Potion</div>
-          <p class="family-desc" data-i18n="ingredients.fam5_desc">
-            Spirits, Magical energy, Floating elements
-          </p>
-          <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/firefly.png" alt="Firefly" class="family-sprite-thumb" title="Firefly">
-            <img src="assets/ingredients/sprites/spell_scroll.png" alt="Scroll" class="family-sprite-thumb"
-              title="Scroll">
-            <img src="assets/ingredients/sprites/soul_flame.png" alt="Blue Flame" class="family-sprite-thumb"
-              title="Blue Flame">
-            <img src="assets/ingredients/sprites/fire_flame.png" alt="Orange Flame" class="family-sprite-thumb"
-              title="Orange Flame">
-          </div>
-        </div>
-
-        <!-- Family 6: Sweets -->
-        <div class="ingredient-family-card reveal-on-scroll delay-3">
-          <div class="family-badge-header">
-            <div class="family-icon">
-              <img src="assets/ingredients/sprites/candy.png" alt="Sweets Family" class="family-header-sprite">
-            </div>
-            <span class="family-badge-tag">Family 06</span>
-          </div>
-          <h3 class="family-title" data-i18n="ingredients.fam6_title">Sweets Family</h3>
-          <div class="family-potion-badge" data-i18n="ingredients.fam6_potion">Brews: Sweet Potion</div>
-          <p class="family-desc" data-i18n="ingredients.fam6_desc">
-            Treats, Mischievous magic, Weird witch snacks
-          </p>
-          <div class="family-sprites-row">
-            <img src="assets/ingredients/sprites/candy.png" alt="Candy" class="family-sprite-thumb" title="Candy">
-            <img src="assets/ingredients/sprites/cupcake.png" alt="Cupcake" class="family-sprite-thumb" title="Cupcake">
-            <img src="assets/ingredients/sprites/slime_cookie.png" alt="Moldy Cookie" class="family-sprite-thumb"
-              title="Moldy Cookie">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
+      <!-- ========================================================================
        Progression Section (80 Levels)
        ======================================================================== -->
-  <section class="progression-section" id="progression">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="progression.tag">The Witch's Journey</div>
-        <h2 class="section-title" data-i18n="progression.headline">80 levels. Endless magical chaos.</h2>
-        <p class="section-subtitle" data-i18n="progression.subtitle">
-          Progress through dozens of levels with rising difficulty, unlocking rooms and rare Grimoire entries.
-        </p>
-      </div>
-
-      <div class="progression-roadmap">
-        <!-- Milestone 1 -->
-        <div class="milestone-item reveal-on-scroll delay-1">
-          <div class="milestone-node">Lv. 1</div>
-          <div class="milestone-content">
-            <h3 class="milestone-title" data-i18n="progression.m1_title">Level 1 — The First Spark</h3>
-            <p class="milestone-desc" data-i18n="progression.m1_desc">
-              Learn cauldron movement &amp; basic ingredient catches in the Living Room.
+      <section class="progression-section" id="progression">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="progression.tag">The Witch's Journey</div>
+            <h2 class="section-title" data-i18n="progression.headline">80 levels. Endless magical chaos.</h2>
+            <p class="section-subtitle" data-i18n="progression.subtitle">
+              Progress through dozens of levels with rising difficulty, unlocking rooms and rare Grimoire entries.
             </p>
-            <span class="milestone-reward-pill" data-i18n="progression.m1_reward">Reward: 50 Witch Coins</span>
+          </div>
+
+          <div class="progression-roadmap">
+            <!-- Milestone 1 -->
+            <div class="milestone-item reveal-on-scroll delay-1">
+              <div class="milestone-node">Lv. 1</div>
+              <div class="milestone-content">
+                <h3 class="milestone-title" data-i18n="progression.m1_title">Level 1 — The First Spark</h3>
+                <p class="milestone-desc" data-i18n="progression.m1_desc">
+                  Learn cauldron movement &amp; basic ingredient catches in the Living Room.
+                </p>
+                <span class="milestone-reward-pill" data-i18n="progression.m1_reward">Reward: 50 Witch Coins</span>
+              </div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="milestone-item reveal-on-scroll delay-2">
+              <div class="milestone-node">Lv. 10</div>
+              <div class="milestone-content">
+                <h3 class="milestone-title" data-i18n="progression.m2_title">Level 10 — Living Room Mastery</h3>
+                <p class="milestone-desc" data-i18n="progression.m2_desc">
+                  Handle double streams and unlock the path to the Kitchen.
+                </p>
+                <span class="milestone-reward-pill" data-i18n="progression.m2_reward">Reward: 75 Witch Coins</span>
+              </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="milestone-item reveal-on-scroll delay-3">
+              <div class="milestone-node">Lv. 25</div>
+              <div class="milestone-content">
+                <h3 class="milestone-title" data-i18n="progression.m3_title">Level 25 — Bedroom Slumber</h3>
+                <p class="milestone-desc" data-i18n="progression.m3_desc">
+                  Balance speed rounds and ward off restless spirits around the canopy bed.
+                </p>
+                <span class="milestone-reward-pill" data-i18n="progression.m3_reward">Reward: 100 Witch Coins</span>
+              </div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="milestone-item reveal-on-scroll delay-4">
+              <div class="milestone-node">Lv. 50</div>
+              <div class="milestone-content">
+                <h3 class="milestone-title" data-i18n="progression.m4_title">Level 50 — Alchemical Secrets</h3>
+                <p class="milestone-desc" data-i18n="progression.m4_desc">
+                  Brew complex multi-family potions under time pressure in the Lab.
+                </p>
+                <span class="milestone-reward-pill" data-i18n="progression.m4_reward">Reward: 150 Witch Coins + Crystal
+                  Shard</span>
+              </div>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="milestone-item reveal-on-scroll delay-5">
+              <div class="milestone-node">Lv. 80</div>
+              <div class="milestone-content">
+                <h3 class="milestone-title" data-i18n="progression.m5_title">Level 80 — The Grand Witch</h3>
+                <p class="milestone-desc" data-i18n="progression.m5_desc">
+                  Conquer the final chamber, master all recipes and complete Lilly's Grimoire!
+                </p>
+                <span class="milestone-reward-pill" data-i18n="progression.m5_reward">Reward: 200 Witch Coins + Grand
+                  Master
+                  Hat</span>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Milestone 2 -->
-        <div class="milestone-item reveal-on-scroll delay-2">
-          <div class="milestone-node">Lv. 10</div>
-          <div class="milestone-content">
-            <h3 class="milestone-title" data-i18n="progression.m2_title">Level 10 — Living Room Mastery</h3>
-            <p class="milestone-desc" data-i18n="progression.m2_desc">
-              Handle double streams and unlock the path to the Kitchen.
-            </p>
-            <span class="milestone-reward-pill" data-i18n="progression.m2_reward">Reward: 75 Witch Coins</span>
-          </div>
-        </div>
-
-        <!-- Milestone 3 -->
-        <div class="milestone-item reveal-on-scroll delay-3">
-          <div class="milestone-node">Lv. 25</div>
-          <div class="milestone-content">
-            <h3 class="milestone-title" data-i18n="progression.m3_title">Level 25 — Bedroom Slumber</h3>
-            <p class="milestone-desc" data-i18n="progression.m3_desc">
-              Balance speed rounds and ward off restless spirits around the canopy bed.
-            </p>
-            <span class="milestone-reward-pill" data-i18n="progression.m3_reward">Reward: 100 Witch Coins</span>
-          </div>
-        </div>
-
-        <!-- Milestone 4 -->
-        <div class="milestone-item reveal-on-scroll delay-4">
-          <div class="milestone-node">Lv. 50</div>
-          <div class="milestone-content">
-            <h3 class="milestone-title" data-i18n="progression.m4_title">Level 50 — Alchemical Secrets</h3>
-            <p class="milestone-desc" data-i18n="progression.m4_desc">
-              Brew complex multi-family potions under time pressure in the Lab.
-            </p>
-            <span class="milestone-reward-pill" data-i18n="progression.m4_reward">Reward: 150 Witch Coins + Crystal
-              Shard</span>
-          </div>
-        </div>
-
-        <!-- Milestone 5 -->
-        <div class="milestone-item reveal-on-scroll delay-5">
-          <div class="milestone-node">Lv. 80</div>
-          <div class="milestone-content">
-            <h3 class="milestone-title" data-i18n="progression.m5_title">Level 80 — The Grand Witch</h3>
-            <p class="milestone-desc" data-i18n="progression.m5_desc">
-              Conquer the final chamber, master all recipes and complete Lilly's Grimoire!
-            </p>
-            <span class="milestone-reward-pill" data-i18n="progression.m5_reward">Reward: 200 Witch Coins + Grand Master
-              Hat</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
+      <!-- ========================================================================
        Leaderboard Section
        ======================================================================== -->
-  <section class="leaderboard-section" id="leaderboard">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="leaderboard.tag">Competitive Magic</div>
-        <h2 class="section-title" data-i18n="leaderboard.headline">Can you become the top apprentice?</h2>
-        <p class="section-subtitle" data-i18n="leaderboard.subtitle">
-          Measure yourself against other apprentice witches on the leaderboard by mastering potion combos.
-        </p>
-      </div>
+      <section class="leaderboard-section" id="leaderboard">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="leaderboard.tag">Competitive Magic</div>
+            <h2 class="section-title" data-i18n="leaderboard.headline">Can you become the top apprentice?</h2>
+            <p class="section-subtitle" data-i18n="leaderboard.subtitle">
+              Measure yourself against other apprentice witches on the leaderboard by mastering potion combos.
+            </p>
+          </div>
 
-      <div class="leaderboard-card-wrapper reveal-on-scroll">
-        <div class="leaderboard-table-header">
-          <span data-i18n="leaderboard.rank_col">Rank</span>
-          <span data-i18n="leaderboard.witch_col">Apprentice Witch</span>
-          <span data-i18n="leaderboard.score_col">High Score</span>
+          <div class="leaderboard-card-wrapper reveal-on-scroll">
+            <div class="leaderboard-table-header">
+              <span data-i18n="leaderboard.rank_col">Rank</span>
+              <span data-i18n="leaderboard.witch_col">Apprentice Witch</span>
+              <span data-i18n="leaderboard.score_col">High Score</span>
+            </div>
+
+            <div class="leaderboard-rows">
+              <!-- Rank 1 -->
+              <div class="leaderboard-row rank-top-1">
+                <span class="rank-badge gold">🥇 1</span>
+                <div class="witch-cell">
+                  <div class="witch-avatar">🧙‍♀️</div>
+                  <span class="witch-name">Player 1</span>
+                </div>
+                <span class="score-cell">284,500</span>
+              </div>
+
+              <!-- Rank 2 -->
+              <div class="leaderboard-row">
+                <span class="rank-badge silver">🥈 2</span>
+                <div class="witch-cell">
+                  <div class="witch-avatar">🔮</div>
+                  <span class="witch-name">Player 2</span>
+                </div>
+                <span class="score-cell">269,120</span>
+              </div>
+
+              <!-- Rank 3 -->
+              <div class="leaderboard-row">
+                <span class="rank-badge bronze">🥉 3</span>
+                <div class="witch-cell">
+                  <div class="witch-avatar">🌟</div>
+                  <span class="witch-name">Player 3</span>
+                </div>
+                <span class="score-cell">254,800</span>
+              </div>
+
+              <!-- Rank 4 -->
+              <div class="leaderboard-row">
+                <span class="rank-badge">4</span>
+                <div class="witch-cell">
+                  <div class="witch-avatar">🌙</div>
+                  <span class="witch-name">Player 4</span>
+                </div>
+                <span class="score-cell">241,350</span>
+              </div>
+
+              <!-- Rank 5 -->
+              <div class="leaderboard-row">
+                <span class="rank-badge">5</span>
+                <div class="witch-cell">
+                  <div class="witch-avatar">🌿</div>
+                  <span class="witch-name">Player 5</span>
+                </div>
+                <span class="score-cell">228,900</span>
+              </div>
+            </div>
+
+            <div class="leaderboard-disclaimer" data-i18n="leaderboard.disclaimer">
+              ✨ Stylized visual representation of in-game leaderboard. Real-time scores and ranks synchronize directly
+              within the WitchyLy mobile app.
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="leaderboard-rows">
-          <!-- Rank 1 -->
-          <div class="leaderboard-row rank-top-1">
-            <span class="rank-badge gold">🥇 1</span>
-            <div class="witch-cell">
-              <div class="witch-avatar">🧙‍♀️</div>
-              <span class="witch-name">Player 1</span>
-            </div>
-            <span class="score-cell">284,500</span>
-          </div>
-
-          <!-- Rank 2 -->
-          <div class="leaderboard-row">
-            <span class="rank-badge silver">🥈 2</span>
-            <div class="witch-cell">
-              <div class="witch-avatar">🔮</div>
-              <span class="witch-name">Player 2</span>
-            </div>
-            <span class="score-cell">269,120</span>
-          </div>
-
-          <!-- Rank 3 -->
-          <div class="leaderboard-row">
-            <span class="rank-badge bronze">🥉 3</span>
-            <div class="witch-cell">
-              <div class="witch-avatar">🌟</div>
-              <span class="witch-name">Player 3</span>
-            </div>
-            <span class="score-cell">254,800</span>
-          </div>
-
-          <!-- Rank 4 -->
-          <div class="leaderboard-row">
-            <span class="rank-badge">4</span>
-            <div class="witch-cell">
-              <div class="witch-avatar">🌙</div>
-              <span class="witch-name">Player 4</span>
-            </div>
-            <span class="score-cell">241,350</span>
-          </div>
-
-          <!-- Rank 5 -->
-          <div class="leaderboard-row">
-            <span class="rank-badge">5</span>
-            <div class="witch-cell">
-              <div class="witch-avatar">🌿</div>
-              <span class="witch-name">Player 5</span>
-            </div>
-            <span class="score-cell">228,900</span>
-          </div>
-        </div>
-
-        <div class="leaderboard-disclaimer" data-i18n="leaderboard.disclaimer">
-          ✨ Stylized visual representation of in-game leaderboard. Real-time scores and ranks synchronize directly
-          within the WitchyLy mobile app.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
+      <!-- ========================================================================
        Screenshot Gallery Section
        ======================================================================== -->
-  <section class="gallery-section" id="gallery">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <div class="section-badge" data-i18n="gallery.tag">Screenshots &amp; Art</div>
-        <h2 class="section-title" data-i18n="gallery.headline">A Peek Inside WitchyLy</h2>
-        <p class="section-subtitle" data-i18n="gallery.subtitle">
-          Take a look at the actual game screens, adorable artwork, and colorful potion laboratory.
-        </p>
+      <section class="gallery-section" id="gallery">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div class="section-badge" data-i18n="gallery.tag">Screenshots &amp; Art</div>
+            <h2 class="section-title" data-i18n="gallery.headline">A Peek Inside WitchyLy</h2>
+            <p class="section-subtitle" data-i18n="gallery.subtitle">
+              Take a look at the actual game screens, adorable artwork, and colorful potion laboratory.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <!-- Shot 1: Core Gameplay -->
+            <div class="gallery-card reveal-on-scroll delay-1" data-caption-key="gallery.caption1">
+              <img src="assets/screenshots/gameplay_cauldron.png" alt="In-Game Gameplay" loading="lazy">
+              <div class="gallery-card-overlay">
+                <div class="gallery-zoom-icon">🔍</div>
+              </div>
+            </div>
+
+            <!-- Shot 2: Room Selection -->
+            <div class="gallery-card reveal-on-scroll delay-2" data-caption-key="gallery.caption2">
+              <img src="assets/screenshots/room_selection_living_room.png" alt="Living Room Selection" loading="lazy">
+              <div class="gallery-card-overlay">
+                <div class="gallery-zoom-icon">🔍</div>
+              </div>
+            </div>
+
+            <!-- Shot 3: Grimoire Inventory -->
+            <div class="gallery-card reveal-on-scroll delay-3" data-caption-key="gallery.caption3">
+              <img src="assets/screenshots/grimoire_potions_inventory.png" alt="Grimoire Potions Inventory"
+                loading="lazy">
+              <div class="gallery-card-overlay">
+                <div class="gallery-zoom-icon">🔍</div>
+              </div>
+            </div>
+
+            <!-- Shot 4: Daily Login Bonus -->
+            <div class="gallery-card reveal-on-scroll delay-4" data-caption-key="gallery.caption4">
+              <img src="assets/screenshots/daily_login_bonus.png" alt="Daily Login Bonus" loading="lazy">
+              <div class="gallery-card-overlay">
+                <div class="gallery-zoom-icon">🔍</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox Modal -->
+      <div class="lightbox-modal" id="gallery-lightbox-modal" role="dialog" aria-modal="true"
+        aria-label="Screenshot Preview">
+        <div class="lightbox-backdrop"></div>
+        <button class="lightbox-arrow-btn" id="lightbox-prev-btn" aria-label="Previous Screenshot">◀</button>
+        <button class="lightbox-arrow-btn" id="lightbox-next-btn" aria-label="Next Screenshot">▶</button>
+
+        <div class="lightbox-content-box">
+          <button class="lightbox-close-btn" aria-label="Close preview">&times;</button>
+          <img src="" alt="Screenshot" id="lightbox-active-img">
+          <div class="lightbox-caption" id="lightbox-active-caption"></div>
+        </div>
       </div>
 
-      <div class="gallery-grid">
-        <!-- Shot 1: Core Gameplay -->
-        <div class="gallery-card reveal-on-scroll delay-1" data-caption-key="gallery.caption1">
-          <img src="assets/screenshots/gameplay_cauldron.png" alt="In-Game Gameplay" loading="lazy">
-          <div class="gallery-card-overlay">
-            <div class="gallery-zoom-icon">🔍</div>
-          </div>
-        </div>
-
-        <!-- Shot 2: Room Selection -->
-        <div class="gallery-card reveal-on-scroll delay-2" data-caption-key="gallery.caption2">
-          <img src="assets/screenshots/room_selection_living_room.png" alt="Living Room Selection" loading="lazy">
-          <div class="gallery-card-overlay">
-            <div class="gallery-zoom-icon">🔍</div>
-          </div>
-        </div>
-
-        <!-- Shot 3: Grimoire Inventory -->
-        <div class="gallery-card reveal-on-scroll delay-3" data-caption-key="gallery.caption3">
-          <img src="assets/screenshots/grimoire_potions_inventory.png" alt="Grimoire Potions Inventory" loading="lazy">
-          <div class="gallery-card-overlay">
-            <div class="gallery-zoom-icon">🔍</div>
-          </div>
-        </div>
-
-        <!-- Shot 4: Daily Login Bonus -->
-        <div class="gallery-card reveal-on-scroll delay-4" data-caption-key="gallery.caption4">
-          <img src="assets/screenshots/daily_login_bonus.png" alt="Daily Login Bonus" loading="lazy">
-          <div class="gallery-card-overlay">
-            <div class="gallery-zoom-icon">🔍</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div class="lightbox-modal" id="gallery-lightbox-modal" role="dialog" aria-modal="true"
-    aria-label="Screenshot Preview">
-    <div class="lightbox-backdrop"></div>
-    <button class="lightbox-arrow-btn" id="lightbox-prev-btn" aria-label="Previous Screenshot">◀</button>
-    <button class="lightbox-arrow-btn" id="lightbox-next-btn" aria-label="Next Screenshot">▶</button>
-
-    <div class="lightbox-content-box">
-      <button class="lightbox-close-btn" aria-label="Close preview">&times;</button>
-      <img src="" alt="Screenshot" id="lightbox-active-img">
-      <div class="lightbox-caption" id="lightbox-active-caption"></div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
+      <!-- ========================================================================
        Download CTA Section
        ======================================================================== -->
-  <section class="download-cta-section" id="download">
-    <div class="container cta-box-container reveal-on-scroll">
-      <div class="section-badge"
-        style="background: rgba(255, 183, 3, 0.15); color: var(--accent-gold); border-color: var(--border-bright);">
-        Available Now
-      </div>
+      <section class="download-cta-section" id="download">
+        <div class="container cta-box-container reveal-on-scroll">
+          <div class="section-badge"
+            style="background: rgba(255, 183, 3, 0.15); color: var(--accent-gold); border-color: var(--border-bright);">
+            Available Now
+          </div>
 
-      <h2 class="cta-headline" data-i18n="cta.headline">Ready to brew some magic?</h2>
-      <p class="cta-subtitle" data-i18n="cta.subtitle">
-        Put on your pointy hat, grab your cauldron and join Ly in WitchyLy: chaos has never been so magical!
-      </p>
+          <h2 class="cta-headline" data-i18n="cta.headline">Ready to brew some magic?</h2>
+          <p class="cta-subtitle" data-i18n="cta.subtitle">
+            Put on your pointy hat, grab your cauldron and join Ly in WitchyLy: chaos has never been so magical!
+          </p>
 
-      <div class="cta-buttons-group">
-        <a href="https://testflight.apple.com/join/3hP99ee9" target="_blank" rel="noopener noreferrer"
-          class="store-button store-button-ios" aria-label="Download on iOS TestFlight">
-          <span class="store-button-icon">
-            <img src="assets/icons/apple_icon.svg" alt="Apple" width="28" height="28">
-          </span>
-          <span class="store-button-texts">
-            <span class="store-btn-subtitle" data-i18n="hero.btn_ios_sub">TestFlight Beta</span>
-            <span class="store-btn-title" data-i18n="hero.btn_ios">Download on iOS</span>
-          </span>
-        </a>
+          <div class="cta-buttons-group">
+            <a href="https://testflight.apple.com/join/3hP99ee9" target="_blank" rel="noopener noreferrer"
+              class="store-button store-button-ios" aria-label="Download on iOS TestFlight">
+              <span class="store-button-icon">
+                <img src="assets/icons/apple_icon.svg" alt="Apple" width="28" height="28">
+              </span>
+              <span class="store-button-texts">
+                <span class="store-btn-subtitle" data-i18n="hero.btn_ios_sub">TestFlight Beta</span>
+                <span class="store-btn-title" data-i18n="hero.btn_ios">Download on iOS</span>
+              </span>
+            </a>
 
-        <a href="https://play.google.com/store/apps/details?id=com.vespera.witchyly" target="_blank"
-          rel="noopener noreferrer" class="store-button store-button-android" aria-label="Get it on Google Play">
-          <span class="store-button-icon">
-            <img src="assets/icons/google_play_icon.svg" alt="Google Play" width="28" height="28">
-          </span>
-          <span class="store-button-texts">
-            <span class="store-btn-subtitle" data-i18n="hero.btn_android_sub">Google Play Store</span>
-            <span class="store-btn-title" data-i18n="hero.btn_android">Get it on Android</span>
-          </span>
-        </a>
-      </div>
+            <a href="https://play.google.com/store/apps/details?id=com.vespera.witchyly" target="_blank"
+              rel="noopener noreferrer" class="store-button store-button-android" aria-label="Get it on Google Play">
+              <span class="store-button-icon">
+                <img src="assets/icons/google_play_icon.svg" alt="Google Play" width="28" height="28">
+              </span>
+              <span class="store-button-texts">
+                <span class="store-btn-subtitle" data-i18n="hero.btn_android_sub">Google Play Store</span>
+                <span class="store-btn-title" data-i18n="hero.btn_android">Get it on Android</span>
+              </span>
+            </a>
+          </div>
 
-      <div class="cta-note" data-i18n="cta.available_text">Available on iOS and Android</div>
-    </div>
-  </section>
+          <div class="cta-note" data-i18n="cta.available_text">Available on iOS and Android</div>
+        </div>
+      </section>
 
-  <!-- ========================================================================
+      <!-- ========================================================================
        Footer
        ======================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand-col">
-        <img src="assets/logo/witchyly_logo.png" alt="WitchyLy" class="footer-logo-img">
-        <p class="footer-brand-tagline" data-i18n="footer.brand_tagline">
-          Chaos has never been so magical! Join Ly on iOS and Android.
-        </p>
-        <span class="footer-dev-badge" data-i18n="footer.developer_text">A magical creation by Vespera.</span>
-      </div>
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div class="footer-brand-col">
+            <img src="assets/logo/witchyly_logo.png" alt="WitchyLy" class="footer-logo-img">
+            <p class="footer-brand-tagline" data-i18n="footer.brand_tagline">
+              Chaos has never been so magical! Join Ly on iOS and Android.
+            </p>
+            <span class="footer-dev-badge" data-i18n="footer.developer_text">A magical creation by Vespera.</span>
+          </div>
 
-      <div>
-        <h4 class="footer-col-title" data-i18n="footer.links_title">Quick Links</h4>
-        <ul class="footer-links-list">
-          <li><a href="#hero" class="footer-link">Home</a></li>
-          <li><a href="#gameplay" class="footer-link" data-i18n="nav.game">Game</a></li>
-          <li><a href="#features" class="footer-link" data-i18n="nav.features">Features</a></li>
-          <li><a href="#rooms" class="footer-link" data-i18n="nav.rooms">8 Rooms</a></li>
-          <li><a href="#grimoire" class="footer-link" data-i18n="nav.grimoire">Grimoire</a></li>
-          <li><a href="#download" class="footer-link" data-i18n="nav.download">Download</a></li>
-        </ul>
-      </div>
+          <div>
+            <h4 class="footer-col-title" data-i18n="footer.links_title">Quick Links</h4>
+            <ul class="footer-links-list">
+              <li><a href="#hero" class="footer-link">Home</a></li>
+              <li><a href="#gameplay" class="footer-link" data-i18n="nav.game">Game</a></li>
+              <li><a href="#features" class="footer-link" data-i18n="nav.features">Features</a></li>
+              <li><a href="#rooms" class="footer-link" data-i18n="nav.rooms">8 Rooms</a></li>
+              <li><a href="#grimoire" class="footer-link" data-i18n="nav.grimoire">Grimoire</a></li>
+              <li><a href="#download" class="footer-link" data-i18n="nav.download">Download</a></li>
+            </ul>
+          </div>
 
-      <div>
-        <h4 class="footer-col-title" data-i18n="footer.legal_title">Legal &amp; Info</h4>
-        <ul class="footer-links-list">
-          <li><a href="privacy-policy.html" class="footer-link" data-i18n="nav.privacy">Privacy Policy</a></li>
-          <li><a href="terms.html" class="footer-link" data-i18n="nav.terms">Terms &amp; Conditions</a></li>
-          <li><a href="https://testflight.apple.com/join/3hP99ee9" target="_blank" rel="noopener noreferrer"
-              class="footer-link">Apple TestFlight</a></li>
-          <li><a href="https://play.google.com/store/apps/details?id=com.vespera.witchyly" target="_blank"
-              rel="noopener noreferrer" class="footer-link">Google Play</a></li>
-        </ul>
-      </div>
-    </div>
+          <div>
+            <h4 class="footer-col-title" data-i18n="footer.legal_title">Legal &amp; Info</h4>
+            <ul class="footer-links-list">
+              <li><a href="privacy-policy.html" class="footer-link" data-i18n="nav.privacy">Privacy Policy</a></li>
+              <li><a href="terms.html" class="footer-link" data-i18n="nav.terms">Terms &amp; Conditions</a></li>
+              <li><a href="https://testflight.apple.com/join/3hP99ee9" target="_blank" rel="noopener noreferrer"
+                  class="footer-link">Apple TestFlight</a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.vespera.witchyly" target="_blank"
+                  rel="noopener noreferrer" class="footer-link">Google Play</a></li>
+            </ul>
+          </div>
+        </div>
 
-    <div class="container footer-bottom-bar">
-      <div data-i18n="footer.copyright">© 2026 Vespera. All rights reserved.</div>
-      <div style="display: flex; gap: 16px;">
-        <button class="lang-option" data-lang="en" style="width: auto; padding: 4px 8px;">🇬🇧 EN</button>
-        <button class="lang-option" data-lang="fr" style="width: auto; padding: 4px 8px;">🇫🇷 FR</button>
-        <button class="lang-option" data-lang="ar" style="width: auto; padding: 4px 8px;">🇸🇦 AR</button>
-      </div>
-    </div>
-  </footer>
+        <div class="container footer-bottom-bar">
+          <div data-i18n="footer.copyright">© 2026 Vespera. All rights reserved.</div>
+          <div style="display: flex; gap: 16px;">
+            <button class="lang-option" data-lang="en" style="width: auto; padding: 4px 8px;">🇬🇧 EN</button>
+            <button class="lang-option" data-lang="fr" style="width: auto; padding: 4px 8px;">🇫🇷 FR</button>
+            <button class="lang-option" data-lang="ar" style="width: auto; padding: 4px 8px;">🇸🇦 AR</button>
+          </div>
+        </div>
+      </footer>
 
-  <!-- Scripts -->
-  <script src="js/i18n.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+      <!-- Scripts -->
+      <script src="js/i18n.js"></script>
+      <script src="js/animations.js"></script>
+      <script src="js/main.js"></script>
 </body>
 
 </html>
