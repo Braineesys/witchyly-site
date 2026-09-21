@@ -115,6 +115,13 @@
    Breakpoints
    ========================================================================== */
 
+/* 1200px — Small Desktop / Large Tablets */
+@media (max-width: 1200px) {
+  .characters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* 1024px — Laptops & Tablets Landscape */
 @media (max-width: 1024px) {
   .hero-grid {
@@ -463,18 +470,22 @@ body.rtl-mode .speaker-lilly .dialogue-bubble {
 }
 
 html[dir="rtl"] .speaker-grukk .dialogue-content,
+html[dir="rtl"] .speaker-goldin .dialogue-content,
 html[dir="rtl"] .speaker-milly .dialogue-content,
 html[dir="rtl"] .speaker-tatty .dialogue-content,
 body.rtl-mode .speaker-grukk .dialogue-content,
+body.rtl-mode .speaker-goldin .dialogue-content,
 body.rtl-mode .speaker-milly .dialogue-content,
 body.rtl-mode .speaker-tatty .dialogue-content {
   align-items: flex-end;
 }
 
 html[dir="rtl"] .speaker-grukk .dialogue-bubble,
+html[dir="rtl"] .speaker-goldin .dialogue-bubble,
 html[dir="rtl"] .speaker-milly .dialogue-bubble,
 html[dir="rtl"] .speaker-tatty .dialogue-bubble,
 body.rtl-mode .speaker-grukk .dialogue-bubble,
+body.rtl-mode .speaker-goldin .dialogue-bubble,
 body.rtl-mode .speaker-milly .dialogue-bubble,
 body.rtl-mode .speaker-tatty .dialogue-bubble {
   border-top-left-radius: 3px;

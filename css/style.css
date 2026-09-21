@@ -742,11 +742,11 @@ button {
   font-size: 1.05rem;
 }
 
-/* 4-Column Characters Grid */
+/* 5-Column Characters Grid */
 .characters-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   margin-bottom: 75px;
 }
 
@@ -756,7 +756,7 @@ button {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 28px 20px 24px 20px;
+  padding: 26px 18px 22px 18px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -779,6 +779,11 @@ button {
 .char-card-grukk:hover {
   border-color: rgba(255, 183, 3, 0.6);
   box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 183, 3, 0.35);
+}
+
+.char-card-goldin:hover {
+  border-color: rgba(82, 183, 136, 0.6);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(82, 183, 136, 0.35);
 }
 
 .char-card-milly:hover {
@@ -813,6 +818,10 @@ button {
 
 .char-card-grukk .character-avatar-glow {
   background: radial-gradient(circle, rgba(255, 183, 3, 0.4) 0%, transparent 70%);
+}
+
+.char-card-goldin .character-avatar-glow {
+  background: radial-gradient(circle, rgba(82, 183, 136, 0.45) 0%, transparent 70%);
 }
 
 .char-card-milly .character-avatar-glow {
@@ -892,6 +901,12 @@ button {
   background: rgba(255, 183, 3, 0.12);
   color: var(--accent-gold-hover);
   border-color: rgba(255, 183, 3, 0.25);
+}
+
+.char-card-goldin .char-tag {
+  background: rgba(82, 183, 136, 0.14);
+  color: #74c69d;
+  border-color: rgba(82, 183, 136, 0.28);
 }
 
 .char-card-milly .char-tag {
@@ -1213,6 +1228,31 @@ button {
 .speaker-grukk .dialogue-bubble {
   background: rgba(46, 32, 16, 0.92);
   border: 1px solid rgba(255, 183, 3, 0.35);
+  border-top-right-radius: 3px;
+}
+
+/* Speaker: Goldin (Right / Emerald Merchant) */
+.speaker-goldin {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.speaker-goldin .dialogue-avatar-box {
+  border-color: #52b788;
+  box-shadow: 0 0 10px rgba(82, 183, 136, 0.35);
+}
+
+.speaker-goldin .dialogue-content {
+  align-items: flex-end;
+}
+
+.speaker-goldin .dialogue-author {
+  color: #74c69d;
+}
+
+.speaker-goldin .dialogue-bubble {
+  background: rgba(18, 48, 32, 0.92);
+  border: 1px solid rgba(82, 183, 136, 0.35);
   border-top-right-radius: 3px;
 }
 
