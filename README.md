@@ -19,6 +19,7 @@ Official landing website for **WitchyLy**, a whimsical casual mobile potion-maki
 
 - **iOS (Apple TestFlight Beta)**: [https://testflight.apple.com/join/3hP99ee9](https://testflight.apple.com/join/3hP99ee9)
 - **Android (Google Play Store)**: [https://play.google.com/store/apps/details?id=com.vespera.witchyly](https://play.google.com/store/apps/details?id=com.vespera.witchyly)
+- **Magic Link (Universal Mobile Store Redirect)**: `https://witchyly.com/app` (Auto-detects Android phone -> Google Play Store, Apple device -> TestFlight / App Store)
 
 ---
 

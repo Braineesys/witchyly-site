@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get WitchyLy — Mobile Game Download</title>
+  <meta name="description" content="Download WitchyLy on iOS or Android. Catch falling ingredients, brew potions, explore 8 magical rooms and master 80 levels.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://witchyly.com/app">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://witchyly.com/app">
+  <meta property="og:title" content="Get WitchyLy — Play on iOS & Android">
+  <meta property="og:description" content="Enter the magical world of WitchyLy! Available now on Android (Google Play) and iOS (Apple TestFlight Beta).">
+  <meta property="og:image" content="https://witchyly.com/assets/screenshots/app_icon_hero.jpg">
+  <meta property="og:site_name" content="WitchyLy">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://witchyly.com/app">
+  <meta name="twitter:title" content="Get WitchyLy — Play on iOS & Android">
+  <meta name="twitter:description" content="Enter the magical world of WitchyLy! Available now on Android (Google Play) and iOS (Apple TestFlight Beta).">
+  <meta name="twitter:image" content="https://witchyly.com/assets/screenshots/app_icon_hero.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/logo/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+
+  <script>
+    // Configuration: Official Store Links
+    const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.vespera.witchyly';
+    const APPLE_STORE_URL = 'https://testflight.apple.com/join/3hP99ee9';
+
+    // Device & Platform Detection
+    function getTargetUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const forced = (urlParams.get('platform') || urlParams.get('store') || urlParams.get('os') || '').toLowerCase();
+
+      if (forced === 'android' || forced === 'google' || forced === 'play') {
+        return { target: GOOGLE_PLAY_URL, platform: 'android' };
+      }
+      if (forced === 'apple' || forced === 'ios' || forced === 'iphone' || forced === 'ipad' || forced === 'mac') {
+        return { target: APPLE_STORE_URL, platform: 'apple' };
+      }
+
+      const ua = (navigator.userAgent || navigator.vendor || window.opera || '');
+      const platform = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '');
+
+      // Check Android phone / tablet
+      const isAndroid = /android/i.test(ua) || /android/i.test(platform);
+      if (isAndroid) {
+        return { target: GOOGLE_PLAY_URL, platform: 'android' };
+      }
+
+      // Check Apple device (iPhone, iPad, iPod, Mac/macOS, iPadOS)
+      const isIOS = /iphone|ipad|ipod/i.test(ua);
+      const isIPadOS = (platform === 'MacIntel' || /macintosh/i.test(ua)) && (navigator.maxTouchPoints > 1);
+      const isMac = /macintosh|mac os x/i.test(ua) || /mac/i.test(platform);
+
+      if (isIOS || isIPadOS || isMac) {
+        return { target: APPLE_STORE_URL, platform: 'apple' };
+      }
+
+      return { target: null, platform: 'other' };
+    }
+
+    // Execute instant redirection if Android or Apple device
+    const detected = getTargetUrl();
+    if (detected.target) {
+      window.location.replace(detected.target);
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-darkest: #0f071a;
+      --bg-deep: #190a2a;
+      --bg-surface: #24103c;
+      --bg-card: rgba(43, 16, 73, 0.85);
+      --accent-gold: #ffb703;
+      --accent-gold-hover: #ffca3a;
+      --accent-purple-light: #c77dff;
+      --accent-purple-vibrant: #9d4edd;
+      --accent-purple-glow: rgba(157, 78, 221, 0.45);
+      --accent-cyan: #48cae4;
+      --text-white: #ffffff;
+      --text-cream: #fbf5e8;
+      --text-muted: #d0c1e4;
+      --border-subtle: rgba(199, 125, 255, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 50% 20%, #2b114d 0%, #150a24 55%, var(--bg-darkest) 100%);
+      color: var(--text-white);
+      padding: 24px 16px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Magical Sparkles */
+    .magic-backdrop {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 10px 2px var(--accent-gold);
+      opacity: 0.6;
+      animation: float-sparkle 6s infinite ease-in-out;
+    }
+
+    .sparkle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 30%; right: 25%; animation-delay: 1.5s; width: 6px; height: 6px; background: var(--accent-purple-light); box-shadow: 0 0 12px 3px var(--accent-purple-light); }
+    .sparkle:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 3s; width: 5px; height: 5px; }
+    .sparkle:nth-child(4) { bottom: 15%; right: 18%; animation-delay: 4.5s; background: var(--accent-cyan); box-shadow: 0 0 10px 2px var(--accent-cyan); }
+
+    @keyframes float-sparkle {
+      0%, 100% { transform: translateY(0) scale(0.8); opacity: 0.3; }
+      50% { transform: translateY(-20px) scale(1.3); opacity: 0.9; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 28px;
+      padding: 40px 28px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px var(--accent-purple-glow);
+      animation: card-appear 0.4s ease-out;
+    }
+
+    @keyframes card-appear {
+      from { opacity: 0; transform: translateY(16px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .logo-wrap {
+      display: inline-block;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .logo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-purple-glow) 0%, transparent 70%);
+      z-index: -1;
+      filter: blur(8px);
+    }
+
+    .logo-img {
+      max-width: 190px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5));
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(157, 78, 221, 0.2);
+      border: 1px solid rgba(199, 125, 255, 0.35);
+      color: var(--accent-purple-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(199, 125, 255, 0.3);
+      border-top-color: var(--accent-gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-family: 'Sniglet', 'Fredoka', cursive;
+      font-size: 1.65rem;
+      color: var(--text-cream);
+      margin-bottom: 10px;
+      line-height: 1.25;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    p.subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .buttons-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .store-button {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    .store-button:hover,
+    .store-button:focus-visible {
+      transform: translateY(-2px) scale(1.02);
+      outline: none;
+    }
+
+    .store-button-ios {
+      background: linear-gradient(135deg, #2b1147 0%, #44176d 100%);
+      border-color: var(--accent-purple-light);
+    }
+
+    .store-button-ios:hover {
+      border-color: #e0aaff;
+      box-shadow: 0 8px 24px rgba(157, 78, 221, 0.4);
+    }
+
+    .store-button-android {
+      background: linear-gradient(135deg, #182740 0%, #1e3a5f 100%);
+      border-color: var(--accent-cyan);
+    }
+
+    .store-button-android:hover {
+      border-color: #90e0ef;
+      box-shadow: 0 8px 24px rgba(72, 202, 228, 0.4);
+    }
+
+    .store-button-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .store-button-icon img {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    .store-button-texts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .store-btn-subtitle {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .store-btn-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-white);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .redirect-primary-btn {
+      display: inline-block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #f77f00 100%);
+      color: #1a0826;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 15px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255, 183, 3, 0.4);
+      transition: all 0.25s ease;
+      margin-bottom: 14px;
+    }
+
+    .redirect-primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.6);
+      background: linear-gradient(135deg, var(--accent-gold-hover) 0%, #ff8800 100%);
+    }
+
+    .footer-actions {
+      margin-top: 26px;
+      border-top: 1px solid rgba(199, 125, 255, 0.15);
+      padding-top: 18px;
+    }
+
+    .footer-link {
+      color: var(--accent-purple-light);
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="magic-backdrop" aria-hidden="true">
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+  </div>
+
+  <main class="card" role="main">
+    <div class="logo-wrap">
+      <img src="../assets/logo/witchyly_logo.png" alt="WitchyLy Logo" class="logo-img" width="190" height="70">
+    </div>
+
+    <!-- Active Redirection State (Mobile detected) -->
+    <div id="redirect-state" style="display: none;">
+      <div class="status-badge">
+        <span class="spinner" aria-hidden="true"></span>
+        <span>Magic Link</span>
+      </div>
+      <h1 id="redirect-title">Opening Store...</h1>
+      <p class="subtitle" id="redirect-message">
+        Redirecting you to the download page. If it doesn't open in a few seconds, tap below:
+      </p>
+
+      <a id="direct-store-btn" class="redirect-primary-btn" href="#">Continue to Store</a>
+
+      <div class="footer-actions">
+        <a href="../" class="footer-link">← Visit WitchyLy Website</a>
+      </div>
+    </div>
+
+    <!-- Dual Choice State (Desktop or Unknown device) -->
+    <div id="choice-state" style="display: none;">
+      <div class="status-badge">
+        <span>✨ Official Download</span>
+      </div>
+      <h1>Choose Your Store</h1>
+      <p class="subtitle">
+        Get WitchyLy on your mobile device to start brewing magical potions!
+      </p>
+
+      <div class="buttons-group">
+        <!-- Google Play -->
+        <a href="https://play.google.com/store/apps/details?id=com.vespera.witchyly"
+           class="store-button store-button-android"
+           id="btn-android"
+           aria-label="Get it on Google Play">
+          <span class="store-button-icon">
+            <img src="../assets/icons/google_play_icon.svg" alt="Google Play icon" width="26" height="26">
+          </span>
+          <span class="store-button-texts">
+            <span class="store-btn-subtitle">Google Play Store</span>
+            <span class="store-btn-title">Get it on Android</span>
+          </span>
+        </a>
+
+        <!-- Apple TestFlight -->
+        <a href="https://testflight.apple.com/join/3hP99ee9"
+           class="store-button store-button-ios"
+           id="btn-apple"
+           aria-label="Download on iOS TestFlight">
+          <span class="store-button-icon">
+            <img src="../assets/icons/apple_icon.svg" alt="Apple icon" width="24" height="24">
+          </span>
+          <span class="store-button-texts">
+            <span class="store-btn-subtitle">TestFlight Beta</span>
+            <span class="store-btn-title">Download on iOS</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="footer-actions">
+        <a href="../" class="footer-link">← Visit WitchyLy Website</a>
+      </div>
+    </div>
+
+    <noscript>
+      <div style="margin-top: 16px;">
+        <h1 style="font-size: 1.4rem;">Download WitchyLy</h1>
+        <p class="subtitle">Please select your device platform:</p>
+        <div class="buttons-group">
+          <a href="https://play.google.com/store/apps/details?id=com.vespera.witchyly" class="store-button store-button-android">
+            <span class="store-button-icon">
+              <img src="../assets/icons/google_play_icon.svg" alt="Google Play icon" width="26" height="26">
+            </span>
+            <span class="store-button-texts">
+              <span class="store-btn-subtitle">Google Play Store</span>
+              <span class="store-btn-title">Get it on Android</span>
+            </span>
+          </a>
+          <a href="https://testflight.apple.com/join/3hP99ee9" class="store-button store-button-ios">
+            <span class="store-button-icon">
+              <img src="../assets/icons/apple_icon.svg" alt="Apple icon" width="24" height="24">
+            </span>
+            <span class="store-button-texts">
+              <span class="store-btn-subtitle">TestFlight Beta</span>
+              <span class="store-btn-title">Download on iOS</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </noscript>
+  </main>
+
+  <script>
+    // Setup UI according to detected platform
+    (function renderState() {
+      const redirectState = document.getElementById('redirect-state');
+      const choiceState = document.getElementById('choice-state');
+      const directBtn = document.getElementById('direct-store-btn');
+      const redirectTitle = document.getElementById('redirect-title');
+      const redirectMsg = document.getElementById('redirect-message');
+
+      if (detected.target) {
+        redirectState.style.display = 'block';
+        directBtn.href = detected.target;
+
+        if (detected.platform === 'android') {
+          redirectTitle.textContent = 'Opening Google Play...';
+          directBtn.textContent = 'Open Google Play Store';
+          redirectMsg.textContent = 'Redirecting to WitchyLy on Google Play. If the store did not open, tap below:';
+        } else if (detected.platform === 'apple') {
+          redirectTitle.textContent = 'Opening Apple Store...';
+          directBtn.textContent = 'Open Apple TestFlight';
+          redirectMsg.textContent = 'Redirecting to WitchyLy on iOS. If the store did not open, tap below:';
+        }
+      } else {
+        choiceState.style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>

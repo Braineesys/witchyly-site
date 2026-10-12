@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect /app or /app/ to /app/index.html
+  RewriteRule ^app/?$ app/index.html [L]
+</IfModule>
