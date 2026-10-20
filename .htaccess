@@ -4,4 +4,7 @@
 
   # Redirect /app or /app/ to /app/index.html
   RewriteRule ^app/?$ app/index.html [L]
+
+  # Redirect /deleteacc or /deleteacc/ to deleteacc/index.html
+  RewriteRule ^deleteacc/?$ deleteacc/index.html [L]
 </IfModule>

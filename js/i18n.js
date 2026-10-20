@@ -21,7 +21,8 @@ const translations = {
       gallery: "Gallery",
       download: "Download",
       privacy: "Privacy Policy",
-      terms: "Terms & Conditions"
+      terms: "Terms & Conditions",
+      deleteacc: "Delete Account"
     },
     hero: {
       badge: "✨ Available on iOS & Android",
@@ -256,6 +257,9 @@ const translations = {
       privacy_subtitle: "Last Updated: September 2026 — Vespera (WitchyLy)",
       terms_title: "Terms & Conditions",
       terms_subtitle: "Last Updated: September 2026 — Vespera (WitchyLy)",
+      deleteacc_title: "Account Deletion",
+      deleteacc_subtitle: "How to request permanent deletion of your WitchyLy account and personal data",
+      deleteacc_page_title: "Account Deletion — WitchyLy (Vespera)",
       back_home: "← Back to WitchyLy"
     }
   },
@@ -276,7 +280,8 @@ const translations = {
       gallery: "Galerie",
       download: "Télécharger",
       privacy: "Politique de Confidentialité",
-      terms: "Conditions Générales"
+      terms: "Conditions Générales",
+      deleteacc: "Supprimer le Compte"
     },
     hero: {
       badge: "✨ Disponible sur iOS & Android",
@@ -511,6 +516,9 @@ const translations = {
       privacy_subtitle: "Dernière mise à jour : Septembre 2026 — Vespera (WitchyLy)",
       terms_title: "Conditions Générales d'Utilisation",
       terms_subtitle: "Dernière mise à jour : Septembre 2026 — Vespera (WitchyLy)",
+      deleteacc_title: "Suppression de Compte",
+      deleteacc_subtitle: "Comment demander la suppression définitive de votre compte et de vos données WitchyLy",
+      deleteacc_page_title: "Suppression de Compte — WitchyLy (Vespera)",
       back_home: "← Retour à WitchyLy"
     }
   },
@@ -531,7 +539,8 @@ const translations = {
       gallery: "معرض الصور",
       download: "تحميل",
       privacy: "سياسة الخصوصية",
-      terms: "الشروط والأحكام"
+      terms: "الشروط والأحكام",
+      deleteacc: "حذف الحساب"
     },
     hero: {
       badge: "✨ متوفرة الآن على iOS و Android",
@@ -766,6 +775,9 @@ const translations = {
       privacy_subtitle: "آخر تحديث: سبتمبر 2026 — Vespera (WitchyLy)",
       terms_title: "الشروط والأحكام",
       terms_subtitle: "آخر تحديث: سبتمبر 2026 — Vespera (WitchyLy)",
+      deleteacc_title: "حذف الحساب",
+      deleteacc_subtitle: "كيفية طلب الحذف النهائي لحسابك وبياناتك في لعبة WitchyLy",
+      deleteacc_page_title: "حذف الحساب — WitchyLy (Vespera)",
       back_home: "← العودة إلى WitchyLy"
     }
   }
@@ -800,22 +812,36 @@ function applyLanguage(lang) {
   }
 
   // Update Page Title and Meta Description
-  if (dict.meta) {
-    if (dict.meta.title && document.querySelector('title')) {
-      document.title = dict.meta.title;
-    }
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && dict.meta.description) {
-      metaDesc.setAttribute('content', dict.meta.description);
-    }
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle && dict.meta.title) {
-      ogTitle.setAttribute('content', dict.meta.title);
-    }
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc && dict.meta.description) {
-      ogDesc.setAttribute('content', dict.meta.description);
-    }
+  const titleEl = document.querySelector('title');
+  if (titleEl && titleEl.hasAttribute('data-i18n')) {
+    const customTitle = getNestedValue(dict, titleEl.getAttribute('data-i18n'));
+    if (customTitle) document.title = customTitle;
+  } else if (dict.meta && dict.meta.title && titleEl) {
+    document.title = dict.meta.title;
+  }
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && metaDesc.hasAttribute('data-i18n')) {
+    const customDesc = getNestedValue(dict, metaDesc.getAttribute('data-i18n'));
+    if (customDesc) metaDesc.setAttribute('content', customDesc);
+  } else if (metaDesc && dict.meta && dict.meta.description) {
+    metaDesc.setAttribute('content', dict.meta.description);
+  }
+
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle && ogTitle.hasAttribute('data-i18n')) {
+    const customOgTitle = getNestedValue(dict, ogTitle.getAttribute('data-i18n'));
+    if (customOgTitle) ogTitle.setAttribute('content', customOgTitle);
+  } else if (ogTitle && dict.meta && dict.meta.title) {
+    ogTitle.setAttribute('content', dict.meta.title);
+  }
+
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc && ogDesc.hasAttribute('data-i18n')) {
+    const customOgDesc = getNestedValue(dict, ogDesc.getAttribute('data-i18n'));
+    if (customOgDesc) ogDesc.setAttribute('content', customOgDesc);
+  } else if (ogDesc && dict.meta && dict.meta.description) {
+    ogDesc.setAttribute('content', dict.meta.description);
   }
 
   // Update all DOM elements with data-i18n attributes
