@@ -29,7 +29,7 @@ const translations = {
       headline: "Chaos has never been so magical!",
       subtitle: "Catch falling ingredients, brew magical potions and help Ly fill her enchanted grimoire.",
       btn_ios: "Download on iOS",
-      btn_ios_sub: "TestFlight Beta",
+      btn_ios_sub: "Apple App Store",
       btn_android: "Get it on Android",
       btn_android_sub: "Google Play Store",
       pill_rooms: "8 Magical Rooms",
@@ -241,7 +241,7 @@ const translations = {
     cta: {
       headline: "Ready to brew some magic?",
       subtitle: "Put on your pointy hat, grab your cauldron and join Ly in WitchyLy: chaos has never been so magical!",
-      btn_ios: "Download on iOS (TestFlight)",
+      btn_ios: "Download on the App Store",
       btn_android: "Get it on Google Play",
       available_text: "Available on iOS and Android"
     },
@@ -288,7 +288,7 @@ const translations = {
       headline: "Le chaos n'a jamais été aussi magique !",
       subtitle: "Attrapez les ingrédients qui tombent, préparez des potions magiques et aidez Ly à remplir son grimoire enchanté.",
       btn_ios: "Télécharger sur iOS",
-      btn_ios_sub: "Bêta TestFlight",
+      btn_ios_sub: "Apple App Store",
       btn_android: "Disponible sur Android",
       btn_android_sub: "Google Play Store",
       pill_rooms: "8 Pièces Magiques",
@@ -500,7 +500,7 @@ const translations = {
     cta: {
       headline: "Prêt à concocter un peu de magie ?",
       subtitle: "Enfilez votre chapeau pointu, attrapez votre chaudron et rejoignez Ly dans WitchyLy : le chaos n'a jamais été aussi magique !",
-      btn_ios: "Télécharger sur iOS (TestFlight)",
+      btn_ios: "Télécharger sur l'App Store",
       btn_android: "Disponible sur Google Play",
       available_text: "Disponible sur iOS et Android"
     },
@@ -547,7 +547,7 @@ const translations = {
       headline: "الفوضى لم تكن يوماً بهذا السحر!",
       subtitle: "التقط المكونات المتساقطة، واصنع جرعات سحرية مذهلة وساعد «لي» في ملء كتاب التعاويذ المسحور.",
       btn_ios: "تحميل على iOS",
-      btn_ios_sub: "نسخة TestFlight التجريبية",
+      btn_ios_sub: "متجر Apple App Store",
       btn_android: "تحميل على Android",
       btn_android_sub: "متجر Google Play",
       pill_rooms: "8 غرف ساحرة",
@@ -759,7 +759,7 @@ const translations = {
     cta: {
       headline: "هل أنت مستعد لصنع بعض السحر؟",
       subtitle: "ارتدِ قبعتك المدببة، وجهّز قِدرك وانضم إلى «لي» في WitchyLy: فالفوضى لم تكن يوماً بهذا السحر!",
-      btn_ios: "تحميل على iOS (TestFlight)",
+      btn_ios: "تحميل من App Store",
       btn_android: "تحميل من Google Play",
       available_text: "متوفرة الآن على iOS و Android"
     },

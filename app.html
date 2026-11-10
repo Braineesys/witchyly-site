@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://witchyly.com/app">
   <meta property="og:title" content="Get WitchyLy — Play on iOS & Android">
-  <meta property="og:description" content="Enter the magical world of WitchyLy! Available now on Android (Google Play) and iOS (Apple TestFlight Beta).">
+  <meta property="og:description" content="Enter the magical world of WitchyLy! Available now on Android (Google Play) and iOS (Apple App Store).">
   <meta property="og:image" content="https://witchyly.com/assets/screenshots/app_icon_hero.jpg">
   <meta property="og:site_name" content="WitchyLy">
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://witchyly.com/app">
   <meta name="twitter:title" content="Get WitchyLy — Play on iOS & Android">
-  <meta name="twitter:description" content="Enter the magical world of WitchyLy! Available now on Android (Google Play) and iOS (Apple TestFlight Beta).">
+  <meta name="twitter:description" content="Enter the magical world of WitchyLy! Available now on Android (Google Play) and iOS (Apple App Store).">
   <meta name="twitter:image" content="https://witchyly.com/assets/screenshots/app_icon_hero.jpg">
 
   <!-- Favicons -->
@@ -36,7 +36,7 @@
   <script>
     // Configuration: Official Store Links
     const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.vespera.witchyly';
-    const APPLE_STORE_URL = 'https://testflight.apple.com/join/3hP99ee9';
+    const APPLE_STORE_URL = 'https://apps.apple.com/app/witchyly-witch-potion-maker/id6806779225';
 
     // Device & Platform Detection
     function getTargetUrl() {
@@ -418,16 +418,16 @@
           </span>
         </a>
 
-        <!-- Apple TestFlight -->
-        <a href="https://testflight.apple.com/join/3hP99ee9"
+        <!-- Apple App Store -->
+        <a href="https://apps.apple.com/app/witchyly-witch-potion-maker/id6806779225"
            class="store-button store-button-ios"
            id="btn-apple"
-           aria-label="Download on iOS TestFlight">
+           aria-label="Download on the App Store">
           <span class="store-button-icon">
             <img src="assets/icons/apple_icon.svg" alt="Apple icon" width="24" height="24">
           </span>
           <span class="store-button-texts">
-            <span class="store-btn-subtitle">TestFlight Beta</span>
+            <span class="store-btn-subtitle">Apple App Store</span>
             <span class="store-btn-title">Download on iOS</span>
           </span>
         </a>
@@ -452,12 +452,12 @@
               <span class="store-btn-title">Get it on Android</span>
             </span>
           </a>
-          <a href="https://testflight.apple.com/join/3hP99ee9" class="store-button store-button-ios">
+          <a href="https://apps.apple.com/app/witchyly-witch-potion-maker/id6806779225" class="store-button store-button-ios">
             <span class="store-button-icon">
               <img src="assets/icons/apple_icon.svg" alt="Apple icon" width="24" height="24">
             </span>
             <span class="store-button-texts">
-              <span class="store-btn-subtitle">TestFlight Beta</span>
+              <span class="store-btn-subtitle">Apple App Store</span>
               <span class="store-btn-title">Download on iOS</span>
             </span>
           </a>
@@ -485,7 +485,7 @@
           redirectMsg.textContent = 'Redirecting to WitchyLy on Google Play. If the store did not open, tap below:';
         } else if (detected.platform === 'apple') {
           redirectTitle.textContent = 'Opening Apple Store...';
-          directBtn.textContent = 'Open Apple TestFlight';
+          directBtn.textContent = 'Open Apple App Store';
           redirectMsg.textContent = 'Redirecting to WitchyLy on iOS. If the store did not open, tap below:';
         }
       } else {

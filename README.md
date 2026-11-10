@@ -17,9 +17,9 @@ Official landing website for **WitchyLy**, a whimsical casual mobile potion-maki
 
 ## 📱 Download Store Links
 
-- **iOS (Apple TestFlight Beta)**: [https://testflight.apple.com/join/3hP99ee9](https://testflight.apple.com/join/3hP99ee9)
+- **iOS (Apple App Store)**: [https://apps.apple.com/app/witchyly-witch-potion-maker/id6806779225](https://apps.apple.com/app/witchyly-witch-potion-maker/id6806779225)
 - **Android (Google Play Store)**: [https://play.google.com/store/apps/details?id=com.vespera.witchyly](https://play.google.com/store/apps/details?id=com.vespera.witchyly)
-- **Magic Link (Universal Mobile Store Redirect)**: `https://witchyly.com/app` (Auto-detects Android phone -> Google Play Store, Apple device -> TestFlight / App Store)
+- **Magic Link (Universal Mobile Store Redirect)**: `https://witchyly.com/app` (Auto-detects Android phone -> Google Play Store, Apple device -> App Store)
 
 ---
 
@@ -36,7 +36,7 @@ Official landing website for **WitchyLy**, a whimsical casual mobile potion-maki
    - Persistent language choice saved in `localStorage`.
 
 3. **Sections Implemented**:
-   - **Hero Section**: 3D logo, Ly portrait, animated magical particles, TestFlight & Google Play download buttons, feature status pills.
+   - **Hero Section**: 3D logo, Ly portrait, animated magical particles, App Store & Google Play download buttons, feature status pills.
    - **Catch. Match. Brew.**: 3-step narrative flow with an interactive visual marketing animation of falling ingredients and movable cauldron.
    - **6-Pillar Features**: Simple Addictive Gameplay, 8 Magical Rooms, 80 Levels, 6 Ingredient Families, Lilly's Grimoire, and Apprentice Leaderboards.
    - **8 Rooms Explorer**: Interactive room tab switcher and carousel showcasing Living Room, Kitchen, Bedroom, Bathroom, Laboratory, Greenhouse, Library, Attic, and upcoming locked chambers.
